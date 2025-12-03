@@ -1,0 +1,37 @@
+---
+export interface Props {
+  colorTheme?: string;
+}
+const { colorTheme } = Astro.props;
+---
+
+<div class:list={['l-container', {'l-container--gray':colorTheme === 'gray' }]}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @use "../../scss/foundation/setting" as *;
+
+  .l-container {
+    @include smMin {
+      padding: 0 0;
+    }
+
+    @include smMax {
+      padding: sm_vw(50) 0 sm_vw(100);
+    }
+
+    &:last-child {
+      @include smMin {
+        padding-bottom: 150px;
+      }
+      @include smMax {
+        padding-bottom: 80px;
+      }
+    }
+
+    &.l-container--gray {
+      background: $colorGray01;
+    }
+  }
+</style>

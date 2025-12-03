@@ -1,0 +1,31 @@
+@charset "utf-8";
+@use "../foundation/setting" as *;
+
+//==========================================================================
+//_container.scss
+//==========================================================================
+
+//-----------------------------------------------------------------
+//.l-container
+//-----------------------------------------------------------------
+.l-container {
+  @include smMin {
+    padding: 0 0;
+  }
+  @include smMax {
+    padding: sm_vw(50) 0 sm_vw(100);
+  }
+  &:last-child {
+    @include smMin {
+      padding-bottom: 150px;
+    }
+    @include smMax {
+      padding-bottom: 80px;
+    }
+  }
+  &.l-container--gray {
+    background: $colorGray01;
+  }
+}
+
+

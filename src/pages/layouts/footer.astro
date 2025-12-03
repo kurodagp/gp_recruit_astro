@@ -1,3 +1,7 @@
+---
+
+---
+
 <footer class="l-footer">
   <div class="l-footer__inner l-inner">
     <div class="l-footer-top">
@@ -62,3 +66,399 @@
     </div>
   </div>
 </footer>
+
+<style lang="scss">
+  @use "../../scss/foundation/setting" as *;
+
+  .l-footer {
+    background: #222;
+    @include smMax {
+      overflow: hidden;
+    }
+    &__inner {
+      position: relative;
+      @include smMin {
+        overflow: hidden;
+      }
+      &::before {
+        content: "";
+        width: 250px;
+        height: 2564px;
+        background: url(/blog/assets/images/footer_slider_l.png) repeat-y center top / 100%;
+        animation: footerSliderL 55s linear infinite;
+        position: absolute;
+        top: 0;
+        right: 300px;
+        @include smMax {
+          width: sm_vw(250);
+          transform: rotate(-45deg);
+          transform-origin: top right;
+          top: sm_vw(-200);
+          right: sm_vw(670);
+        }
+      }
+      &::after {
+        content: "";
+        width: 250px;
+        height: 3168px;
+        background: url(/blog/assets/images/footer_slider_r.png) repeat-y center top / 100%;
+        animation: footerSliderR 65s linear infinite;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include smMax {
+          width: sm_vw(250);
+          transform: rotate(-45deg);
+          transform-origin: top right;
+          top: sm_vw(-200);
+          right: sm_vw(250);
+        }
+      }
+      @keyframes footerSliderL {
+        0% {background-position: 0 2564px;}
+        100% {background-position: 0 0;}
+      }
+      @keyframes footerSliderR {
+        0% {background-position: 0 0;}
+        100% {background-position: 0 3168px;}
+      }
+      &::before {
+        pointer-events: none;
+        @include smMin {
+          transform-origin: top right;
+          @include lgMax {
+            transform: scale(0.85);
+            right: 260px;
+          }
+          @media screen and (max-width: 1180px) {
+            transform: scale(0.7);
+            right: 220px;
+          }
+          @include mdMax {
+            display: none;
+          }
+        }
+      }
+      &::after {
+        pointer-events: none;
+        @include smMin {
+          transform-origin: top right;
+          @include lgMax {
+            transform: scale(0.85);
+            right: 20px;
+          }
+          @media screen and (max-width: 1180px) {
+            transform: scale(0.7);
+          }
+          @include mdMax {
+            display: none;
+          }
+        }
+      }
+    }
+    &-top {
+      padding: 200px 0 80px;
+      @include smMin {
+        max-width: 665px;
+        @include lgMax {
+          max-width: 550px;
+        }
+      }
+      @include smMax {
+        padding: sm_vw(570) 0 sm_vw(20);
+        max-width: none;
+      }
+    }
+    &-join {
+      @include smMax {
+        padding: 0 sm_vw(40);
+        position: relative;
+        z-index: 2;
+      }
+      &__ttl {
+        color: #FFF;
+        font-family: $font-en;
+        font-size: 7.2rem;
+        font-weight: bold;
+        @include smMax {
+          font-size: sm_vw(110);
+        }
+      }
+      &__lead {
+        color: #FFF;
+        font-size: 2rem;
+        margin-top: 20px;
+        line-height: 2;
+        display: inline-flex;
+        align-items: flex-end;
+        position: relative;
+        @include smMax {
+          font-size: sm_vw(32);
+          margin-top: sm_vw(40);
+        }
+        &::after {
+          content: "";
+          width: 34px;
+          height: 23px;
+          background: url(/blog/assets/images/handshake@2x.png) no-repeat center / 100%;
+          @include smMin {
+            transform: translate(6px, -8px);
+          }
+          @include smMax {
+            width: sm_vw(48);
+            height: sm_vw(34);
+            position: absolute;
+            bottom: sm_vw(10);
+            right: sm_vw(100);
+          }
+        }
+      }
+      &__btn {
+        margin-top: 40px;
+        display: flex;
+        @include smMax {
+          margin-top: sm_vw(60);
+          display: block;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          height: 70px;
+          margin-right: 30px;
+          padding: 0 25px;
+          background: rgba(#FFF,0.15);
+          overflow: hidden;
+          position: relative;
+          @include smMax {
+            display: inline-flex;
+            height: sm_vw(100);
+            margin: 0 0 sm_vw(40);
+            padding: 0 sm_vw(40);
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            transition: all .3s;
+          }
+          &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            display: block;
+            mask-image: url(/blog/assets/images/icon_blank.svg);
+            mask-repeat: no-repeat;
+            mask-size: 10px;
+            background-color: #FFF;
+            margin-left: 8px;
+            transition: all .3s;
+          }
+          span {
+            color: #FFF;
+            font-size: 2rem;
+            font-weight: 500;
+            transition: all .3s;
+            position: relative;
+            z-index: 2;
+            @include smMax {
+              font-size: sm_vw(32);
+            }
+          }
+          @include hover{
+            &::before {
+              width: 100%;
+            }
+            &::after {
+              background-color: #000;
+            }
+            span {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    &-link {
+      margin-top: 200px;
+      @include smMax {
+        margin-top: sm_vw(240);
+      }
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include smMax {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0 sm_vw(40);
+        }
+      }
+      &-bottom {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: solid 1px #5C5C5C;
+        @include smMax {
+          margin-top: sm_vw(80);
+          padding: sm_vw(80) sm_vw(40) 0;
+        }
+        &__list {
+          display: flex;
+          @include smMax {
+            flex-wrap: wrap;
+          }
+          li {
+            color: #FFF;
+            font-family: $font-en;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-right: 40px;
+            @include smMax {
+              font-size: sm_vw(30);
+              margin-right: sm_vw(60);
+              margin-bottom: sm_vw(60);
+            }
+            a {
+              position: relative;
+              &::before{
+                @include mdMin{
+                  position: absolute;
+                  bottom: -0.5em;
+                  left: -2px;
+                  content: "";
+                  display: inline-block;
+                  width: 0;
+                  height: 1px;
+                  background: #FFF;
+                  transition: all .3s;
+                }
+              }
+              @include hover{
+                &::before{
+                  width: calc(100% + 4px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__logo {
+      width: 264px;
+      @include smMax {
+        width: sm_vw(488);
+      }
+    }
+    &__sns {
+      display: flex;
+      align-items: center;
+      @include smMax {
+        margin-top: sm_vw(80);
+      }
+      dt {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #FFF;
+        margin-right: 6px;
+        @include smMax {
+          font-size: sm_vw(26);
+          margin-right: sm_vw(10);
+        }
+      }
+      ul {
+        display: flex;
+        li {
+          width: 32px;
+          margin-left: 10px;
+          @include smMax {
+            width: sm_vw(58);
+            margin-left: sm_vw(20);
+          }
+          a {
+            transition: opacity 0.4s;
+            @include hover{
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+    &-bottom {
+      background: #FFF;
+      @include smMax {
+        padding: sm_vw(60) 0;
+        position: relative;
+      }
+      &__inner {
+        @include smMin {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 100px;
+        }
+      }
+      &__list {
+        display: flex;
+        margin-right: auto;
+        flex-wrap: wrap;
+        li {
+          margin-right: 30px;
+          @include smMax {
+            margin-right: sm_vw(25);
+            margin-bottom: sm_vw(25);
+          }
+          a {
+            color: $colorPlain;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            @include smMax {
+              font-size: sm_vw(22);
+            }
+            @include hover{
+              opacity: .6;
+              text-decoration: underline;
+            }
+            &::after {
+              content: "";
+              width: 8px;
+              height: 8px;
+              display: block;
+              mask-image: url(/blog/assets/images/icon_blank.svg);
+              mask-repeat: no-repeat;
+              mask-size: 8px;
+              background-color: $colorPlain;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+    &__copyright {
+      color: $colorPlain;
+      font-size: 1.1rem;
+      @include smMax {
+        display: block;
+        font-size: sm_vw(22);
+        margin-top: sm_vw(80);
+      }
+    }
+    &__pmark {
+      margin-left: 30px;
+      @include smMax {
+        width: sm_vw(92);
+        position: absolute;
+        bottom: sm_vw(55);
+        right: sm_vw(40);
+      }
+      a {
+        @include hover{
+          opacity: .6;
+        }
+      }
+    }
+  }
+</style>

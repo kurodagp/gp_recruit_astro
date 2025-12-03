@@ -1,0 +1,40 @@
+---
+export interface Props {
+  pageParameter: string;
+}
+
+const { pageParameter } = Astro.props;
+---
+
+<div class:list={['l-page', pageParameter ]}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @use "../../scss/foundation/setting" as *;
+
+  .l-page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+    
+    @include smMax{
+      padding-top:sm_vw(100);
+    }
+
+    &__heading {
+      position: absolute;
+      overflow: hidden;
+      height: 1px;
+      width: 1px;
+      padding: 0;
+      border: 0;
+    }
+
+    &.top {
+      padding-top: 0;
+    }
+  }
+</style>

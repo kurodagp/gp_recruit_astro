@@ -1,0 +1,22 @@
+---
+---
+
+<div class="l-inner">
+  <slot />
+</div>
+
+<style lang="scss">
+  @use "../../scss/foundation/setting" as *;
+
+  .l-inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: $lg + px;
+    @include smMax{
+      padding-left: sm_vw(40);
+      padding-right: sm_vw(40);
+    }
+  }
+</style>

@@ -1,0 +1,28 @@
+@charset "utf-8";
+@use "../../foundation/setting" as *;
+
+//==========================================================================
+//_link.scss
+//==========================================================================
+
+//-----------------------------------------------------------------
+//.c-link
+//-----------------------------------------------------------------
+.c-link{
+  font-size: 1.6rem;
+  line-height: 2;
+  letter-spacing: 0.004em;
+  @include smMax{
+    font-size: sm_vw(30);
+  }
+  @include hover{
+    opacity: 0.6;
+  }
+  &--ud{
+    text-decoration: underline;
+    text-underline-offset: 0.8rem;
+  }
+  &--blank{
+    position: relative;
+  }
+}

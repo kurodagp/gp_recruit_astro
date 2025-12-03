@@ -1,0 +1,44 @@
+---
+const { pageTitle, pageDescription } = Astro.props;
+---
+
+<!DOCTYPE HTML>
+<html lang="ja-JP">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!--HEAD START-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="noindex">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/blog/favicon.svg">
+<link rel="canonical" href="https://recruit.gpol.co.jp/blog/">
+
+<!--OGP-->
+<meta property="og:title" content={pageTitle}>
+<meta property="og:type" content="website">
+<meta property="og:description" content={pageDescription}>
+<meta property="og:url" content="https://recruit.gpol.co.jp/blog/">
+<meta property="og:image" content="https://recruit.gpol.co.jp/blog/assets/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://recruit.gpol.co.jp/blog/assets/images/ogp.png">
+
+<!--CSS-->
+<link rel="stylesheet" href="/blog/assets/vendor/swiper.min.css" media="all">
+<!-- <link rel="stylesheet" href="/blog/assets/css/style.css" media="all"> -->
+<!-- <link rel="stylesheet" href="/blog/assets/css/top.css" media="all"> -->
+<!--JS-->
+<script is:inline src="/blog/assets/vendor/jquery.min.js" defer></script>
+<script is:inline src="/blog/assets/vendor/picturefill.js" defer></script>
+<script is:inline src="/blog/assets/vendor/swiper-bundle.js" defer></script>
+<script is:inline src="/blog/assets/js/common.js" defer></script>
+<script is:inline src="/blog/assets/js/top.js" defer></script>
+<!--HEAD END-->
+
+</head>
+<body>
+  <slot />
+</body>
+</html>

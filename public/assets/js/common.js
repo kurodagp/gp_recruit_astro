@@ -45,15 +45,15 @@ function spriteSvg() {
 
 // toggle header class
 //---------------------------------------------------------
-function toggleHeaderClass() {
-  $(window).on('scroll', function() {
-    if ($(this).scrollTop() > 10) {
-      $('.l-header').addClass('is-fixed');
-    } else {
-      $('.l-header').removeClass('is-fixed');
-    }
-  });
-}
+// function toggleHeaderClass() {
+//   $(window).on('scroll', function() {
+//     if ($(this).scrollTop() > 10) {
+//       $('.l-header').addClass('is-fixed');
+//     } else {
+//       $('.l-header').removeClass('is-fixed');
+//     }
+//   });
+// }
 
 
 //menu
@@ -199,7 +199,7 @@ $(function(){
   userAgent();
   userAgentIE();
   spriteSvg();
-  toggleHeaderClass();
+  // toggleHeaderClass();
   menu();
   dropNav();
   pagetop();

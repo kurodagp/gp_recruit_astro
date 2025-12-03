@@ -1,20 +1,24 @@
 ---
-import BaseLayout from './layouts/baseLayout.astro';
+import '../scss/style.scss';
+import '../scss/top.scss';
+import Base from './layouts/base.astro';
+import Container from './layouts/container.astro';
+import Page from './layouts/page.astro';
 import Header from './layouts/header.astro';
 import Footer from './layouts/footer.astro';
 
 ---
 
-<BaseLayout 
+<Base 
   pageTitle="GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア"
   pageDescription="GROW-PLATHX [グロウプレイス]は、ジーピーオンラインで働く社員のインタビューや、働く環境、価値観、仕事内容の紹介など、私たちがありがとうをつくり、成長していく姿をお届けする採用オウンドメディアです。"
 >
 
-<div class="l-page top">
+<Page pageParameter='top'>
   
   <Header />
   
-  <div class="l-container">
+  <Container>
     <section class="mv" id="mv">
       <div class="mv-news">
         <div class="mv-news-wrap">
@@ -676,8 +680,8 @@ import Footer from './layouts/footer.astro';
       <li data-title="values">VALUES</li>
       <li data-title="work">WORK</li>
     </ul>
-  </div>
+  </Container>
 
   <Footer />
-</div>
-</BaseLayout>
+</Page>
+</Base>
