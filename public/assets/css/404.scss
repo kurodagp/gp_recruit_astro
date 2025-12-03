@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+@import "foundation/_setting.scss";
+//==========================================================================
+//404.scss
+//==========================================================================
+
+.error {
+	padding: 12rem 0;
+	text-align: center;
+	@include smMax {
+		padding: sm_vw(80) 0;
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 2.8rem;
+		text-align: center;
+		margin-bottom: 3.5rem;
+		@include smMax {
+			font-size: sm_vw(44);
+			text-align: center;
+			margin-bottom: sm_vw(60);
+		}
+	}
+
+	p {
+		line-height: 2;
+		letter-spacing: .04em;
+		@include smMax {
+			line-height: 1.9;
+			text-align: left;
+
+		}
+	}
+
+	.blk__btn {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: .5rem;
+		font-size: 1.4rem;
+		line-height: 2.56;
+		color: #fff;
+		padding: 1.2rem;
+		margin: 20px auto 0;
+		background-color: #000;
+		border: 1px solid #000;
+		z-index: 1;
+		width: 200px;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			width: 0;
+			height: 100%;
+			background-color: #fff;
+			transition: all .3s;
+			z-index: -1;
+		}
+		@include hover{
+			color: #000;
+			& svg{
+			  fill: #000;
+			}
+			&::before{
+			  width: 100%;
+			}
+		  }
+	}
+}

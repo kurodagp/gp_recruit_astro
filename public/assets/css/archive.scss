@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+@import "foundation/_setting.scss";
+//==========================================================================
+//archive.scss
+//==========================================================================
+
+//-----------------------------------------------------------------
+//.archive
+//-----------------------------------------------------------------
+.archive {
+
+  &__ttl {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 90px;
+    padding-top: 40px;
+    border-top: 1px solid $colorMain;
+    @include mdMax{
+      margin: 0 20px 45px;
+      padding-top: 20px;
+    }
+    @include smMax{
+      margin-left: sm_vw(40);
+      margin-right: sm_vw(40);
+      margin-bottom: sm_vw(90);
+      padding-top: sm_vw(40);
+    }
+    span {
+      letter-spacing: 0.04em;
+    }
+    .font-en {
+      font-family: $font-en;
+      font-size: 5.2rem;
+      @include smMax{
+        font-size: sm_vw(64);
+      }
+    }
+    .font-jp {
+      color: $colorPlain;
+      font-size: 2rem;
+      margin-left: 1.5rem;
+      @include smMax{
+        font-size: sm_vw(32);
+        margin-left: sm_vw(24);
+      }
+    }
+    &.tags {
+      font-size: 2.4rem;
+      @include smMax{
+        font-size: sm_vw(36);
+      }
+    }
+  }
+
+  .l-footer {
+    margin-top: 12rem;
+    @include mdMax {
+      margin-top: 0;
+    }
+  }
+  .archive {
+    margin-top: 20px;
+    @include mdMax{
+      order: 1;
+      margin-right: -20px;
+      margin-left: -20px;
+      margin-top: 0;
+    }
+    @include smMax{
+      margin-right: sm_vw(-40);
+      margin-left: sm_vw(-40);
+    }
+    &-list{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 60px;
+      @include smMin{
+        justify-content: space-between;
+      }
+      @include mdMax{
+        padding-right: 2rem;
+        padding-left: 2rem;
+      }
+      @include smMax{
+        row-gap: sm_vw(100);
+        padding-right: sm_vw(40);
+        padding-left: sm_vw(40);
+      }
+    }
+    &-card{
+      width: 48%;
+      @include smMax{
+        width: 100%;
+      }
+    }
+    &-link{
+      display: block;
+      width: 100%;
+      @include hover{
+        & img{
+          opacity: 0.7;
+          transform: scale(1.05);
+        }
+      }
+      &__fig{
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+        overflow: hidden;
+        @include smMax{
+          margin-bottom: sm_vw(16);
+        }
+        img {
+          pointer-events: none;
+        }
+      }
+      &__caption{
+        font-size: 1.2rem;
+        padding-left: 0.8rem;
+        @include smMax{
+          font-size: sm_vw(24);
+          padding-left: sm_vw(14);
+        }
+        &__group{
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #FFF;
+          padding: 0.4rem 0.9rem;
+          background-color: $colorMain;
+          @include smMax{
+            padding: sm_vw(8) sm_vw(15);
+          }
+        }
+        &--alphabet{
+          font-family: $font-en;
+          font-size: 1.4rem;
+          padding-right: 0.8rem;
+          border-right: 1px solid #FFF;
+          @include smMax{
+            font-size: sm_vw(26);
+            padding-right: sm_vw(14);
+          }
+        }
+      }
+      &__time{
+        font-family: $font-en;
+        font-size: 1.2rem;
+        line-height: 3;
+        color: $colorPlain;
+        margin-bottom: 8px;
+        @include smMax{
+          font-size: sm_vw(24);
+          line-height: 1.5;
+          margin-bottom: sm_vw(8);
+        }
+      }
+      &__ttl{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        @include smMin{
+          margin-top: -10px;
+        }
+        @include smMax{
+          font-size: sm_vw(32);
+          margin-bottom: sm_vw(16);
+        }
+      }
+    }
+    &-tag{
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      line-height: 1.83;
+      padding: 0.3rem 1rem;
+      border: 1px solid $colorMain;
+      border-radius: 20px;
+      @include smMax{
+        font-size: sm_vw(22);
+        padding: sm_vw(6) sm_vw(14);
+      }
+      &List{
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    &-more{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 70px;
+      @include smMax{
+        padding-left: sm_vw(40);
+        margin-top: sm_vw(40);
+      }
+      &__btn{
+        position: relative;
+        display: block;
+        font-family: $font-en;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.75;
+        width: 200px;
+        transition: all 0.3s;
+        @include mdMax{
+          margin-right: 20px;
+        }
+        @include smMax{
+          font-size: sm_vw(28);
+          width: sm_vw(295);
+          margin-right: 0;
+        }
+        &::before{
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          transition: all 0.3s;
+          content: '';
+          width: 16px;
+          height: 8px;
+          background-image: url("/blog/assets/images/arrow.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          @include smMax{
+            right: 0;
+            width: sm_vw(25.19);
+            height: sm_vw(12);
+          }
+        }
+        &::after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 0.3s;
+          content: '';
+          width: 200px;
+          height: 1px;
+          background-color: #000;
+          @include smMax{
+            width: 100%;
+          }
+        }
+        @include hover{
+          padding-left: 10px;
+          &::before{
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    @include mdMax {
+      margin-top: sm_vw(140);
+      padding: 0 sm_vw(40);
+    }
+  }
+
+  .main-sns {
+    @include smMax {
+      margin-bottom: 0;
+    }
+  }
+  .l-container {
+    @include smMax {
+      padding: sm_vw(90) 0 sm_vw(160);
+    }
+  }
+
+}

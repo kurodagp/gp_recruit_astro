@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <style>
+  #o { fill: #222; }
+  @media (prefers-color-scheme: dark) {
+    #o { fill: #FFF; }
+  }
+  </style>
+  <defs>
+    <clipPath id="clip-favicon">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="favicon" clip-path="url(#clip-favicon)">
+    <g id="favicon-2" data-name="favicon" transform="translate(0 1)">
+      <path id="o" d="M67.414,17.364C67.414,7.483,74.648,0,85.316,0c8.806,0,14.1,5.127,14.1,12.568,0,9.881-7.235,17.364-17.9,17.364-8.805,0-14.1-5.126-14.1-12.568m25.219-4.423c0-4.3-2.811-7.235-7.9-7.235-6.532,0-10.542,5.168-10.542,11.287,0,4.3,2.812,7.235,7.9,7.235,6.533,0,10.542-5.169,10.542-11.287" transform="translate(-67.414)"/>
+      <path id="smile" d="M90.249,16.71,87.7,14.785c-1.089,1.441-2.761,3.159-4.557,3.169h-.015a4.535,4.535,0,0,1-3.119-1.695l-2.951,2.222a8.253,8.253,0,0,0,6.053,3.167h.018c2.372,0,4.636-1.244,6.743-3.685,1.316.3,1.658-.354,1.658-.354Z" transform="translate(-68.152 -1.131)" fill="#ffc92a"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <symbol id="ico-arrow01" viewBox="0 0 8.49 14.14">
+      <title></title>
+      <polygon points="7.07 5.66 7.07 5.66 1.41 0 0 1.41 5.66 7.07 0 12.73 1.41 14.14 7.07 8.48 8.48 7.07 7.07 5.66"/>
+    </symbol>
+
+    <symbol id="ico-blank01" viewBox="0 0 10 10">
+      <title></title>
+      <path d="M3.5-.5h8.006v8H3.5Zm7.006,1H4.5v6h6.006Z" transform="translate(-3.5 2.5)"/>
+      <path d="M204.5,6150.916h-1v-6.5H197v-1h7.5Z" transform="translate(-194.499 -6143.415)"/>
+    </symbol>
+
+  </defs>
+</svg>
