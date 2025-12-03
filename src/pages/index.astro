@@ -1,6 +1,683 @@
 ---
-import BaseLayout from './layouts/BaseLayout.astro';
+import BaseLayout from './layouts/baseLayout.astro';
+import Header from './layouts/header.astro';
+import Footer from './layouts/footer.astro';
 
 ---
 
-<BaseLayout pageTitle="GP Recruit" pageDescription="採用ブログ" />
+<BaseLayout 
+  pageTitle="GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア"
+  pageDescription="GROW-PLATHX [グロウプレイス]は、ジーピーオンラインで働く社員のインタビューや、働く環境、価値観、仕事内容の紹介など、私たちがありがとうをつくり、成長していく姿をお届けする採用オウンドメディアです。"
+>
+
+<div class="l-page top">
+  
+  <Header />
+  
+  <div class="l-container">
+    <section class="mv" id="mv">
+      <div class="mv-news">
+        <div class="mv-news-wrap">
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+        </div>
+        <div class="mv-news-wrap">
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+          <dl class="mv-news__item">
+            <dt>2025.11.20</dt>
+            <dd>新着記事を追加しました🎈</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="l-inner mv-inner">
+        <div class="mv-container flex-container">
+          <div class="mv-container--main main-content">
+            <div class="mv-lead">
+              <h1 class="mv-lead__title">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="/blog/assets/images/top/mv_ttl_sp.svg">
+                  <img src="/blog/assets/images/top/mv_ttl.svg" alt="GROW-PLATHX【グロウプレイス】ありがとうをつくり、ともに成長する">
+                </picture>
+              </h1>
+              <div class="mv-lead__wrap">
+                <p class="mv-lead__text">ここではジーピーオンラインの人、会社、価値観、<br class="u-sm-min">仕事に関する情報をお届けしています。<br>あなたが、ここであなたらしく“成長”できる日々を過ごせるように。<br>そして、私たちは今日も成長に会いにいく。</p>
+                <p class="mv-lead__btn">
+                  <a href="https://www.gpol.co.jp/recruit/" target="_blank"><span>採用サイトを見る</span></a>
+                </p>
+              </div>
+            </div>
+            <ul class="mv-anchor">
+              <li><a href="?anchor=people"><b>PEOPLE</b><span>ひと</span></a></li>
+              <li><a href="?anchor=company"><b>COMPANY</b><span>はたらく環境</span></a></li>
+              <li><a href="?anchor=values"><b>VALUES</b><span>価値観</span></a></li>
+              <li><a href="?anchor=work"><b>WORK</b><span>仕事</span></a></li>
+            </ul>
+          </div>
+          <div class="mv-container--side side-content">
+            <div class="mv-recommend">
+              <h2 class="mv-recommend__ttl">RECOMMEND</h2>
+              <div class="mv-recommend__slider">
+                <ul class="mv-recommend__list swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="/blog/2.html">
+                      <div class="mv-recommend__img"><img src="/blog/assets/images/blog/2/kv.jpg" alt=""></div>
+                      <p class="mv-recommend__date">2024.10.09</p>
+                      <p class="mv-recommend__title">顧客視点に立てば、成果は後からついてくる</p>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="/blog/23.html">
+                      <div class="mv-recommend__img"><img src="/blog/assets/images/blog/23/kv.jpg" alt=""></div>
+                      <p class="mv-recommend__date">2025.11.20</p>
+                      <p class="mv-recommend__title">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</p>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="/blog/20.html">
+                      <div class="mv-recommend__img"><img src="/blog/assets/images/blog/20/kv.jpg" alt=""></div>
+                      <p class="mv-recommend__date">2025.09.26</p>
+                      <p class="mv-recommend__title">経験を“次のステージ”へ ─ 広がり続けるデザインキャリア</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="headerPos"></div>
+    </section>
+
+    <!-- newest -->
+    <section class="newest" id="newest">
+      <div class="l-inner newest-inner">
+        <h2 class="newest__ttl ttl01 typing-anime">
+          <span>新着記事</span>
+          <b class="typing typing01">ジーピー<br class="u-sm-max">オンラインの今</b>
+        </h2>
+        <div class="newest-container flex-container">
+          <div class="newest-container--main main-content">
+            <div class="relation">
+              <div class="relation-list">
+                <div class="relation-card">
+                  <a href="/blog/23.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/23/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">VALUES</span><span class="relation-link__caption">価値観</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-11-07">2025.11.20</time>
+                    <h4 class="relation-link__ttl">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">システムエンジニア</li>
+                      <li class="relation-tag">デジタルプロダクションG</li>
+                    </ul>
+                  </a>
+                </div>
+                <div class="relation-card">
+                  <a href="/blog/22.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/22/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-11-07">2025.11.07</time>
+                    <h4 class="relation-link__ttl">エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">システムエンジニア</li>
+                      <li class="relation-tag">デジタルプロダクションG</li>
+                      <li class="relation-tag">カルチャー</li>
+                    </ul>
+                  </a>
+                </div>
+                <div class="relation-card">
+                  <a href="/blog/21.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/21/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-10-30">2025.10.30</time>
+                    <h4 class="relation-link__ttl">「もっと良くするために」ジーピーオンラインが動き出したこと</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">新卒</li>
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">行動指針</li>
+                    </ul>
+                  </a>
+                </div>
+                <div class="relation-card">
+                  <a href="/blog/20.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/20/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">PEOPLE</span><span class="relation-link__caption">ひと</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-09-26">2025.09.26</time>
+                    <h4 class="relation-link__ttl">経験を“次のステージ”へ ─ 広がり続けるデザインキャリア</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">Webデザイナー</li>
+                      <li class="relation-tag">アートディレクター</li>
+                      
+                    </ul>
+                  </a>
+                </div>
+                <div class="relation-card">
+                  <a href="/blog/19.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/19/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-08-29">2025.08.29</time>
+                    <h4 class="relation-link__ttl">大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる“新しい働き方と挑戦”</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">新卒</li>
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">Webディレクター</li>
+                      <li class="relation-tag">未経験者</li>
+                    </ul>
+                  </a>
+                </div>
+                <div class="relation-card">
+                  <a href="/blog/18.html" class="relation-link">
+                    <figure class="relation-link__fig">
+                      <img src="/blog/assets/images/blog/18/kv.jpg" alt="">
+                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
+                    </figure>
+                    <time class="relation-link__time" datetime="2025-07-29">2025.07.29</time>
+                    <h4 class="relation-link__ttl">挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く</h4>
+                    <ul class="relation-tagList">
+                      <li class="relation-tag">中途</li>
+                      <li class="relation-tag">Webディレクター</li>
+                      <li class="relation-tag">プロデュースG</li>
+                    </ul>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="relation-more">
+              <a href="all.html">
+                <div class="relation-more__btn">READ MORE</div>
+              </a>
+            </div>
+          </div>
+          <div class="newest-container--side side-content sidebar">
+            <div class="sidebar-category">
+              <div class="sidebar-headline__group">
+                <span class="sidebar-headline__alphabet">CATEGORY</span>
+                <h3 class="sidebar-headline">カテゴリー</h3>
+              </div>
+              <ul class="sidebar-category__list">
+                <li><a href="all.html"><span class="en">ALL</span>すべて</a></li>
+                <li><a href="people.html"><span class="en">PEOPLE</span>ひと</a></li>
+                <li><a href="company.html"><span class="en">COMPANY</span>はたらく環境</a></li>
+                <li><a href="values.html"><span class="en">VALUE</span>価値観</a></li>
+                <li><a href="work.html"><span class="en">WORK</span>仕事</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-recommended">
+              <div class="sidebar-headline__group">
+                <span class="sidebar-headline__alphabet">RECOMMENDED</span>
+                <h3 class="sidebar-headline">おすすめの記事</h3>
+              </div>
+              <ul class="sidebar-recommended__list">
+                <li>
+                  <a href="/blog/2.html">
+                    <div class="sidebar-recommended__thumbnail">
+                      <img src="/blog/assets/images/blog/2/thumb.jpg" srcset="/blog/assets/images/blog/2/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                    </div>
+                    <div class="sidebar-recommended__content">
+                      <span class="sidebar-recommended__tag">#VALUES</span>
+                      <h4 class="sidebar-recommended__ttl">顧客視点に立てば、成果は後からついてくる</h4>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/23.html">
+                    <div class="sidebar-recommended__thumbnail">
+                      <img src="/blog/assets/images/blog/23/thumb.jpg" srcset="/blog/assets/images/blog/23/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                    </div>
+                    <div class="sidebar-recommended__content">
+                      <span class="sidebar-recommended__tag">#VALUES</span>
+                      <h4 class="sidebar-recommended__ttl">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</h4>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/20.html">
+                    <div class="sidebar-recommended__thumbnail">
+                      <img src="/blog/assets/images/blog/20/thumb.jpg" srcset="/blog/assets/images/blog/20/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                    </div>
+                    <div class="sidebar-recommended__content">
+                      <span class="sidebar-recommended__tag">#PEOPLE</span>
+                      <h4 class="sidebar-recommended__ttl">経験を“次のステージ”へ ─ 広がり続けるデザインキャリア</h4>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar-recruit u-md-min">
+              <div class="sidebar-headline__group">
+                <span class="sidebar-headline__alphabet">RECRUIT</span>
+                <h3 class="sidebar-headline">採用情報</h3>
+              </div>
+              <a href="https://www.gpol.co.jp/recruit/recruitinfo/" target="_blank" class="sidebar-recruit__btn">
+                募集職種を見る
+                <i class="c-ico-blank-02"><svg><use xlink:href="#ico-blank01"></use></svg></i>
+              </a>
+            </div>
+            <div class="sidebar-sns u-md-min">
+              <div class="sidebar-sns__headline">
+                <h3 class="sidebar-sns__ttl">
+                  Follow us
+                  <img src="/blog/assets/images/thumbsup.png" alt="" width="39" height="43">
+                </h3>
+                <span class="sidebar-sns__info">最新情報をおしらせします</span>
+              </div>
+              <div class="sidebar-sns__content">
+                <h4 class="sidebar-sns__official">公式SNS</h4>
+                <ul class="sidebar-sns__list">
+                  <li>
+                    <a href="https://x.com/gpol_tw" target="_blank" class="share-btn">
+                      <img src="/blog/assets/images/x_icon.png" alt="X">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/gpol.fb" target="_blank" class="share-btn">
+                      <img src="/blog/assets/images/fb_icon.png" alt="Facebook">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://note.com/gpol_pr" target="_blank" class="share-btn">
+                      <img src="/blog/assets/images/note_icon.png" alt="note">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- people -->
+    <section class="people fixed-title--pos" id="people">
+      <div class="l-inner people-inner">
+        <div class="people-detail">
+          <h2 class="people__ttl ttl01 typing-anime">
+            <span>ひと</span>
+            <b class="typing typing01">良い人と一緒に、</b>
+            <b class="typing typing02">良い仕事を</b>
+          </h2>
+          <p class="people__lead">毎日、たくさんの人と<br>関わりながら過ごしていく。<br>周りにたくさんの良い人がいるから、<br>良い仕事ができる。</p>
+        </div>
+        <div class="people__slider">
+          <ul class="people-list swiper-wrapper">
+            <li class="people-list__item swiper-slide">
+              <a href="/blog/20.html">
+                <figure class="people-list__img">
+                  <img src="/blog/assets/images/top/people_list07.jpg" srcset="/blog/assets/images/top/people_list07@2x.jpg 2x" alt="">
+                </figure>
+                <dl class="people-list__detail">
+                  <dt class="people-list__title">
+                    <p>経験を“次のステージ”へ<br>広がり続ける<br>デザインキャリア</p>
+                  </dt>
+                  <dd>
+                    <ul class="people-list__tagList">
+                      <li class="people-list__tag">#中途</li>
+                      <li class="people-list__tag">#Webデザイナー</li>
+                      <li class="people-list__tag">#アートディレクター</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </a>
+            </li>
+            <li class="people-list__item swiper-slide">
+              <a href="/blog/17.html">
+                <figure class="people-list__img">
+                  <img src="/blog/assets/images/top/people_list06.jpg" srcset="/blog/assets/images/top/people_list06@2x.jpg 2x" alt="">
+                </figure>
+                <dl class="people-list__detail">
+                  <dt class="people-list__title">
+                    <p>好奇心が導いた<br>アカウントプランナーの<br>成長ストーリー</p>
+                  </dt>
+                  <dd>
+                    <ul class="people-list__tagList">
+                      <li class="people-list__tag">#中途</li>
+                      <li class="people-list__tag">#アカウントプランナー</li>
+                      <li class="people-list__tag">#企画営業</li>
+                      <li class="people-list__tag">#アカウントDiv</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </a>
+            </li>
+            <li class="people-list__item swiper-slide">
+              <a href="/blog/16.html">
+                <figure class="people-list__img">
+                  <img src="/blog/assets/images/top/people_list05.jpg" srcset="/blog/assets/images/top/people_list05@2x.jpg 2x" alt="">
+                </figure>
+                <dl class="people-list__detail">
+                  <dt class="people-list__title">
+                    <p>“共創”の原点に<br>あるのは<br>飾らない“正直さ”</p>
+                  </dt>
+                  <dd>
+                    <ul class="people-list__tagList">
+                      <li class="people-list__tag">#Webディレクター</li>
+                      <li class="people-list__tag">#プロデュースG</li>
+                      <li class="people-list__tag">#中途</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </a>
+            </li>
+            <li class="people-list__item swiper-slide">
+              <a href="/blog/10.html">
+                <figure class="people-list__img">
+                  <img src="/blog/assets/images/top/people_list03.jpg" srcset="/blog/assets/images/top/people_list03@2x.jpg 2x" alt="">
+                </figure>
+                <dl class="people-list__detail">
+                  <dt class="people-list__title">
+                    <p>ジーピーオンラインで<br>「成長」を叶える<br>秘訣とは？</p>
+                  </dt>
+                  <dd>
+                    <ul class="people-list__tagList">
+                      <li class="people-list__tag">#新卒</li>
+                      <li class="people-list__tag">#Webディレクター</li>
+                      <li class="people-list__tag">#プロデュースG</li>
+                      <li class="people-list__tag">#未経験者</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </a>
+            </li>
+            <li class="people-list__item swiper-slide">
+              <a href="/blog/5.html">
+                <figure class="people-list__img">
+                  <img src="/blog/assets/images/top/people_list02.jpg" srcset="/blog/assets/images/top/people_list02@2x.jpg 2x" alt="">
+                </figure>
+                <dl class="people-list__detail">
+                  <dt class="people-list__title">
+                    <p>デザイナーの成長と挑戦<br>アートディレクターの<br>道を切り開く</p>
+                  </dt>
+                  <dd>
+                    <ul class="people-list__tagList">
+                      <li class="people-list__tag">#アートディレクター</li>
+                      <li class="people-list__tag">#Webデザイナー</li>
+                      <li class="people-list__tag">#クリエイティブDiv</li>
+                      <li class="people-list__tag">#新卒</li>
+                    </ul>
+                  </dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-button">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="l-inner u-w-100">
+        <div class="people-more">
+          <a href="people.html">
+            <div class="people-more__btn">READ MORE</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- company -->
+    <section class="company fixed-title--pos" id="company">
+      <div class="l-inner company-inner">
+        <h2 class="company__ttl ttl01 typing-anime">
+          <span>はたらく環境</span>
+          <b class="typing typing01">全員で<br class="u-sm-max">居心地の良い場所を<br class="u-sm-max">つくっています</b>
+        </h2>
+        <p class="company__lead">ジーピーオンラインは毎日過ごす大切な場所。<br>社員の成長とともに、会社も日々成長していく。</p>
+        <ul class="company-list">
+          <li class="company-list__item">
+            <a href="/blog/21.html">
+              <figure class="company-list__img"><img src="/blog/assets/images/blog/21/kv.jpg" alt=""></figure>
+              <div class="company-list__detail">
+                <p class="company-list__date">2025.10.30</p>
+                <p class="company-list__title">「もっと良くするために」ジーピーオンラインが動き出したこと</p>
+                <ul class="company-list__tag">
+                  <li class="archive-tag">新卒</li>
+                  <li class="archive-tag">中途</li>
+                  <li class="archive-tag">行動指針</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li class="company-list__item">
+            <a href="/blog/19.html">
+              <figure class="company-list__img"><img src="/blog/assets/images/blog/19/kv.jpg" alt=""></figure>
+              <div class="company-list__detail">
+                <p class="company-list__date">2025.08.29</p>
+                <p class="company-list__title">大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる“新しい働き方と挑戦”</p>
+                <ul class="company-list__tag">
+                  <li>新卒</li>
+                  <li>中途</li>
+                  <li>Webディレクター</li>
+                  <li>未経験者</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li class="company-list__item">
+            <a href="/blog/14.html">
+              <figure class="company-list__img"><img src="/blog/assets/images/blog/14/kv.jpg" alt=""></figure>
+              <div class="company-list__detail">
+                <p class="company-list__date">2025.05.23</p>
+                <p class="company-list__title">「この人たちと働きたい」と思えた瞬間が、決断の理由</p>
+                <ul class="company-list__tag">
+                  <li>新卒</li>
+                  <li>Webディレクター</li>
+                  <li>プロデュースG</li>
+                  <li>未経験者</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="company-more">
+          <a href="company.html">
+            <div class="company-more__btn">READ MORE</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- values -->
+    <section class="values fixed-title--pos" id="values">
+      <div class="l-inner values-inner">
+        <h2 class="values__ttl ttl01 typing-anime">
+          <span>価値観</span>
+          <b class="typing typing01">常に“ありがとう”を<br class="u-sm-max">考え、行動する</b>
+        </h2>
+        <p class="values__lead">仲間からの“ありがとう”は、<br class="u-sm-max">高いモチベーション。<br>お客さまからの“ありがとう”で、さらなる成長を。</p>
+        <ul class="values-list">
+          <li class="values-list__item values-list__item--main">
+            <a href="/blog/23.html">
+              <figure class="values-list__img"><img src="/blog/assets/images/blog/23/kv.jpg" alt=""></figure>
+              <div class="values-list__wrap">
+                <div class="values-list__copy">
+                  <p>楽しむことを原動力に、<br>誠実にものづくりに向き合う。<br>それがチームの<br>大きな力になります。</p>
+                </div>
+                <div class="values-list__detail">
+                  <p class="values-list__date">2025.11.20</p>
+                  <p class="values-list__title">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</p>
+                  <ul class="values-list__tag">
+                    <li>中途</li>
+                    <li>システムエンジニア</li>
+                    <li>デジタルプロダクションG</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="values-list__item values-list__item">
+            <a href="/blog/15.html">
+              <figure class="values-list__img"><img src="/blog/assets/images/blog/15/kv.jpg" alt=""></figure>
+              <div class="values-list__wrap">
+                <div class="values-list__detail">
+                  <p class="values-list__date">2025.05.29</p>
+                  <p class="values-list__title">共創はこうして生まれる ─ 愛されディレクターの仕事スタイル</p>
+                  <ul class="values-list__tag">
+                    <li>Webディレクター</li>
+                    <li>プロデュースG</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="values-list__item values-list__item">
+            <a href="/blog/2.html">
+              <figure class="values-list__img"><img src="/blog/assets/images/blog/2/kv.jpg" alt=""></figure>
+              <div class="values-list__wrap">
+                <div class="values-list__detail">
+                  <p class="values-list__date">2024.10.09</p>
+                  <p class="values-list__title">顧客視点に立てば、成果は後からついてくる</p>
+                  <ul class="values-list__tag">
+                    <li>アカウントプランナー</li>
+                    <li>企画営業</li>
+                    <li>プロデューサー</li>
+                    <li>アカウントDiv</li>
+                    <li>行動指針</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="values-more">
+          <a href="values.html">
+            <div class="values-more__btn">READ MORE</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- work -->
+    <section class="work fixed-title--pos" id="work">
+      <div class="l-inner work-inner">
+        <h2 class="work__ttl ttl01 typing-anime">
+          <span>仕事</span>
+          <b class="typing typing01">私たちの<br class="u-sm-max">“成長”のヒケツ</b>
+        </h2>
+        <p class="work__lead">人それぞれ、仕事における成長の機会や時間は違う。<br>だけど、ここでの仕事はきっとあなたが望む成長になる。</p>
+        <ul class="work-list">
+          <li class="work-list__item">
+            <a href="/blog/22.html">
+              <div class="work-list__detail">
+                <ul class="work-list__tag">
+                  <li>中途</li>
+                  <li>システムエンジニア</li>
+                  <li>デジタルプロダクションG</li>
+                  <li>カルチャー</li>
+                </ul>
+                <p class="work-list__copy">技術を「個人」から「チームで使いこなす」へ。</p>
+                <p class="work-list__title">エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性</p>
+              </div>
+              <figure class="work-list__img"><img src="/blog/assets/images/blog/22/kv.jpg" alt=""></figure>
+            </a>
+          </li>
+          <li class="work-list__item">
+            <a href="/blog/18.html">
+              <div class="work-list__detail">
+                <ul class="work-list__tag">
+                  <li>中途</li>
+                  <li>Webディレクター</li>
+                  <li>プロデュースG</li>
+                </ul>
+                <p class="work-list__copy">初めての解析業務が導いた、一歩先を見据える提案力</p>
+                <p class="work-list__title">挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く</p>
+              </div>
+              <figure class="work-list__img"><img src="/blog/assets/images/blog/18/kv.jpg" alt=""></figure>
+            </a>
+          </li>
+          <li class="work-list__item">
+            <a href="/blog/13.html">
+              <div class="work-list__detail">
+                <ul class="work-list__tag">
+                  <li>採用サイト</li>
+                  <li>コンテンツディレクター</li>
+                  <li>プランナー</li>
+                  <li>中途</li>
+                  <li>コミュニケーションデザイン事業部</li>
+                </ul>
+                <p class="work-list__copy">多様な施策を駆使しビジネスの可能性を広げていく</p>
+                <p class="work-list__title">コミュニケーションデザイン事業部の魅力に迫る</p>
+              </div>
+              <figure class="work-list__img"><img src="/blog/assets/images/blog/13/kv.jpg" alt=""></figure>
+            </a>
+          </li>
+        </ul>
+        <div class="work-more">
+          <a href="work.html">
+            <div class="work-more__btn">READ MORE</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <ul class="fixed-title">
+      <li data-title="people">PEOPLE</li>
+      <li data-title="company">COMPANY</li>
+      <li data-title="values">VALUES</li>
+      <li data-title="work">WORK</li>
+    </ul>
+  </div>
+
+  <Footer />
+</div>
+</BaseLayout>
