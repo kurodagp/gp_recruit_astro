@@ -1,0 +1,80 @@
+[
+  {
+    "id": 23,
+    "href": "/blog/23.html",
+    "imageSrc": "/blog/assets/images/blog/23/kv.jpg",
+    "category": {
+      "alphabet": "VALUES",
+      "label": "価値観"
+    },
+    "date": "2025.11.20",
+    "dateTime": "2025-11-20",
+    "title": "技術は変わっても、\"つくる楽しさ\"は変わらない。エンジニアが語る仕事の原点",
+    "tags": ["中途", "システムエンジニア", "デジタルプロダクションG"]
+  },
+  {
+    "id": 22,
+    "href": "/blog/22.html",
+    "imageSrc": "/blog/assets/images/blog/22/kv.jpg",
+    "category": {
+      "alphabet": "WORK",
+      "label": "仕事"
+    },
+    "date": "2025.11.07",
+    "dateTime": "2025-11-07",
+    "title": "エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性",
+    "tags": ["中途", "システムエンジニア", "デジタルプロダクションG", "カルチャー"]
+  },
+  {
+    "id": 21,
+    "href": "/blog/21.html",
+    "imageSrc": "/blog/assets/images/blog/21/kv.jpg",
+    "category": {
+      "alphabet": "COMPANY",
+      "label": "はたらく環境"
+    },
+    "date": "2025.10.30",
+    "dateTime": "2025-10-30",
+    "title": "「もっと良くするために」ジーピーオンラインが動き出したこと",
+    "tags": ["新卒", "中途", "行動指針"]
+  },
+  {
+    "id": 20,
+    "href": "/blog/20.html",
+    "imageSrc": "/blog/assets/images/blog/20/kv.jpg",
+    "category": {
+      "alphabet": "PEOPLE",
+      "label": "ひと"
+    },
+    "date": "2025.09.26",
+    "dateTime": "2025-09-26",
+    "title": "経験を\"次のステージ\"へ ─ 広がり続けるデザインキャリア",
+    "tags": ["中途", "Webデザイナー", "アートディレクター"]
+  },
+  {
+    "id": 19,
+    "href": "/blog/19.html",
+    "imageSrc": "/blog/assets/images/blog/19/kv.jpg",
+    "category": {
+      "alphabet": "COMPANY",
+      "label": "はたらく環境"
+    },
+    "date": "2025.08.29",
+    "dateTime": "2025-08-29",
+    "title": "大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる\"新しい働き方と挑戦\"",
+    "tags": ["新卒", "中途", "Webディレクター", "未経験者"]
+  },
+  {
+    "id": 18,
+    "href": "/blog/18.html",
+    "imageSrc": "/blog/assets/images/blog/18/kv.jpg",
+    "category": {
+      "alphabet": "WORK",
+      "label": "仕事"
+    },
+    "date": "2025.07.29",
+    "dateTime": "2025-07-29",
+    "title": "挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く",
+    "tags": ["中途", "Webディレクター", "プロデュースG"]
+  }
+]

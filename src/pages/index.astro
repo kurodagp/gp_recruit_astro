@@ -6,7 +6,11 @@ import Container from './layouts/container.astro';
 import Page from './layouts/page.astro';
 import Header from './layouts/header.astro';
 import Footer from './layouts/footer.astro';
+import RelationCard from '../components/RelationCard.astro';
+import type { Article } from '../types/article';
+import articlesData from '../data/articles.json';
 
+const articles: Article[] = articlesData;
 ---
 
 <Base 
@@ -152,99 +156,19 @@ import Footer from './layouts/footer.astro';
           <div class="newest-container--main main-content">
             <div class="relation">
               <div class="relation-list">
-                <div class="relation-card">
-                  <a href="/blog/23.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/23/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">VALUES</span><span class="relation-link__caption">価値観</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-11-07">2025.11.20</time>
-                    <h4 class="relation-link__ttl">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">システムエンジニア</li>
-                      <li class="relation-tag">デジタルプロダクションG</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/22.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/22/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-11-07">2025.11.07</time>
-                    <h4 class="relation-link__ttl">エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">システムエンジニア</li>
-                      <li class="relation-tag">デジタルプロダクションG</li>
-                      <li class="relation-tag">カルチャー</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/21.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/21/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-10-30">2025.10.30</time>
-                    <h4 class="relation-link__ttl">「もっと良くするために」ジーピーオンラインが動き出したこと</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">新卒</li>
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">行動指針</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/20.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/20/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">PEOPLE</span><span class="relation-link__caption">ひと</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-09-26">2025.09.26</time>
-                    <h4 class="relation-link__ttl">経験を“次のステージ”へ ─ 広がり続けるデザインキャリア</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webデザイナー</li>
-                      <li class="relation-tag">アートディレクター</li>
-                      
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/19.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/19/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-08-29">2025.08.29</time>
-                    <h4 class="relation-link__ttl">大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる“新しい働き方と挑戦”</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">新卒</li>
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webディレクター</li>
-                      <li class="relation-tag">未経験者</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/18.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/18/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-07-29">2025.07.29</time>
-                    <h4 class="relation-link__ttl">挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webディレクター</li>
-                      <li class="relation-tag">プロデュースG</li>
-                    </ul>
-                  </a>
-                </div>
+                {articles.map((article) => (
+                  <RelationCard
+                    href={article.href}
+                    imageSrc={article.imageSrc}
+                    imageSrcSet={article.imageSrcSet}
+                    categoryAlphabet={article.category.alphabet}
+                    categoryLabel={article.category.label}
+                    date={article.date}
+                    dateTime={article.dateTime}
+                    title={article.title}
+                    tags={article.tags}
+                  />
+                ))}
               </div>
             </div>
             <div class="relation-more">
