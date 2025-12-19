@@ -1,0 +1,126 @@
+---
+interface AnchorItem {
+  anchor: string;
+  title: string;
+  subtitle: string;
+}
+
+interface Props {
+  items: AnchorItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="c-anchor">
+  {items.map((item) => (
+    <li><a href={`?anchor=${item.anchor}`}><b>{item.title}</b><span>{item.subtitle}</span></a></li>
+  ))}
+</ul>
+
+<script>
+  function navAnchor() {
+    const header = document.querySelector('.l-header');
+    let headerHeight = header ? header.offsetHeight : 0;
+    
+    const body = document.body;
+    if (body.classList.contains('is-view-pc') || body.classList.contains('is-view-tab')) {
+      headerHeight -= 25;
+    }
+    
+    const url = new URL(location.href);
+    const params = url.searchParams;
+    if(!params.has('anchor')) return;
+
+    setTimeout(function(){
+      const anchorId = params.get('anchor');
+      const anchorTarget = document.getElementById(anchorId);
+      if (anchorTarget) {
+        const position = anchorTarget.offsetTop - headerHeight;
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth'
+        });
+      }
+    }, 0);
+  }
+  
+  window.addEventListener('load', function(){
+    navAnchor();
+  });
+</script>
+
+<style lang="scss">
+  @use "../../scss/foundation/setting" as *;
+
+  .c-anchor {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include smMax {
+      margin-top: sm_vw(80);
+    }
+    li {
+      width: 48%;
+      border-bottom: solid 1px #000;
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-top: solid 1px #000;
+      }
+      a {
+        width: 100%;
+        height: 95px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        @include smMax {
+          height: sm_vw(140);
+          padding: 0 sm_vw(20);
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          position: relative;
+        }
+        &::after {
+          content: "";
+          width: 24px;
+          height: 12px;
+          background: url(/blog/assets/images/arrow.svg) no-repeat center / 100%;
+          transform: rotate(90deg);
+          margin-left: auto;
+          @include smMax {
+            width: sm_vw(28);
+            height: sm_vw(13);
+            position: absolute;
+            right: sm_vw(20);
+          }
+        }
+        b {
+          font-family: $font-en;
+          font-size: 3.3rem;
+          font-weight: bold;
+          margin-right: 10px;
+          @include smMax {
+            font-size: sm_vw(40);
+            margin: 0 0 sm_vw(10);
+          }
+        }
+        span {
+          font-size: 1.6rem;
+          color: $colorPlain;
+          @include smMax {
+            font-size: sm_vw(24);
+          }
+        }
+        @include smMin {
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: translateY(10px);
+          }
+        }
+      }
+    }
+  }
+
+</style>

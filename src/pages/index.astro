@@ -6,6 +6,7 @@ import Container from './layouts/container.astro';
 import Page from './layouts/page.astro';
 import Header from './layouts/header.astro';
 import Footer from './layouts/footer.astro';
+import Anchor from './component/anchor.astro';
 
 ---
 
@@ -99,12 +100,12 @@ import Footer from './layouts/footer.astro';
                 </p>
               </div>
             </div>
-            <ul class="mv-anchor">
-              <li><a href="?anchor=people"><b>PEOPLE</b><span>ひと</span></a></li>
-              <li><a href="?anchor=company"><b>COMPANY</b><span>はたらく環境</span></a></li>
-              <li><a href="?anchor=values"><b>VALUES</b><span>価値観</span></a></li>
-              <li><a href="?anchor=work"><b>WORK</b><span>仕事</span></a></li>
-            </ul>
+            <Anchor items={[
+              { anchor: 'people', title: 'PEOPLE', subtitle: 'ひと' },
+              { anchor: 'company', title: 'COMPANY', subtitle: 'はたらく環境' },
+              { anchor: 'values', title: 'VALUES', subtitle: '価値観' },
+              { anchor: 'work', title: 'WORK', subtitle: '仕事' }
+            ]} />
           </div>
           <div class="mv-container--side side-content">
             <div class="mv-recommend">
