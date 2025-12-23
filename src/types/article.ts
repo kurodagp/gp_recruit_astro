@@ -11,6 +11,7 @@ export interface Article {
   dateTime: string;
   title: string;
   tags: string[];
+  copy?: string;
 }
 
 // 将来的にCMSから取得する場合のインターフェース
