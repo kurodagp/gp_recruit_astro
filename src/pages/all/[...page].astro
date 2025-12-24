@@ -1,0 +1,208 @@
+---
+import '../../scss/style.scss';
+import '../../scss/archive.scss';
+import Base from '../layouts/base.astro';
+import Container from '../layouts/container.astro';
+import Page from '../layouts/page.astro';
+import Header from '../layouts/header.astro';
+import Footer from '../layouts/footer.astro';
+import RelationCard from '../../components/RelationCard.astro';
+import Pager from '../../components/Pager.astro';
+import type { Article } from '../../types/article';
+import type { Page as AstroPage } from 'astro';
+import articlesData from '../../data/articles.json';
+
+export async function getStaticPaths({ paginate }: any) {
+  const articles: Article[] = articlesData;
+  
+  return paginate(articles, {
+    pageSize: 4
+  });
+}
+
+interface Props {
+  page: AstroPage<Article>;
+}
+
+const { page } = Astro.props;
+
+const pageTitle = page.currentPage === 1 
+  ? "記事一覧 | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア"
+  : `記事一覧 (${page.currentPage}ページ目) | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア`;
+---
+
+<Base 
+  pageTitle={pageTitle}
+  pageDescription="GROW-PLATHX [グロウプレイス]は、ジーピーオンラインで働く社員のインタビューや、働く環境、価値観、仕事内容の紹介など、私たちがありがとうをつくり、成長していく姿をお届けする採用オウンドメディアです。"
+>
+
+<Page pageParameter='archive'>
+  
+  <Header />
+  
+  <Container>
+    <div class="p-breadcrumb">
+      <ul>
+        <li><a href="/blog/">トップ</a></li>
+        <li>記事一覧</li>
+      </ul>
+    </div>
+
+    <div class="blog-container">
+      <main class="main-content">
+        <section class="main-article">
+          <div class="archive">
+            <h2 class="archive__ttl">
+              <span class="font-en">ALL</span>
+              <span class="font-jp">記事一覧</span>
+            </h2>
+            <div class="archive-list">
+              <div class="relation-list">
+                {page.data.map((article) => (
+                  <RelationCard
+                    href={article.href}
+                    imageSrc={article.imageSrc}
+                    imageSrcSet={article.imageSrcSet}
+                    categoryAlphabet={article.category.alphabet}
+                    categoryLabel={article.category.label}
+                    date={article.date}
+                    dateTime={article.dateTime}
+                    title={article.title}
+                    tags={article.tags}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Pager page={page} />
+
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="sidebar-category">
+          <div class="sidebar-headline__group">
+            <span class="sidebar-headline__alphabet">CATEGORY</span>
+            <h3 class="sidebar-headline">カテゴリー</h3>
+          </div>
+          <ul class="sidebar-category__list">
+            <li><a href="/blog/all/"><span class="en">ALL</span>すべて</a></li>
+            <li><a href="/blog/people.html"><span class="en">PEOPLE</span>ひと</a></li>
+            <li><a href="/blog/company.html"><span class="en">COMPANY</span>はたらく環境</a></li>
+            <li><a href="/blog/values.html"><span class="en">VALUE</span>価値観</a></li>
+            <li><a href="/blog/work.html"><span class="en">WORK</span>仕事</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-recommended">
+          <div class="sidebar-headline__group">
+            <span class="sidebar-headline__alphabet">RECOMMENDED</span>
+            <h3 class="sidebar-headline">おすすめの記事</h3>
+          </div>
+          <ul class="sidebar-recommended__list">
+            <li>
+              <a href="/blog/2.html">
+                <div class="sidebar-recommended__thumbnail">
+                  <img src="/blog/assets/images/blog/2/thumb.jpg" srcset="/blog/assets/images/blog/2/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                </div>
+                <div class="sidebar-recommended__content">
+                  <span class="sidebar-recommended__tag">#VALUES</span>
+                  <h4 class="sidebar-recommended__ttl">顧客視点に立てば、成果は後からついてくる</h4>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/blog/23.html">
+                <div class="sidebar-recommended__thumbnail">
+                  <img src="/blog/assets/images/blog/23/thumb.jpg" srcset="/blog/assets/images/blog/23/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                </div>
+                <div class="sidebar-recommended__content">
+                  <span class="sidebar-recommended__tag">#VALUES</span>
+                  <h4 class="sidebar-recommended__ttl">技術は変わっても、"つくる楽しさ"は変わらない。エンジニアが語る仕事の原点</h4>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/blog/20.html">
+                <div class="sidebar-recommended__thumbnail">
+                  <img src="/blog/assets/images/blog/20/thumb.jpg" srcset="/blog/assets/images/blog/20/thumb@2x.jpg 2x" width="840" height="441" alt="">
+                </div>
+                <div class="sidebar-recommended__content">
+                  <span class="sidebar-recommended__tag">#PEOPLE</span>
+                  <h4 class="sidebar-recommended__ttl">経験を"次のステージ"へ ─ 広がり続けるデザインキャリア</h4>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-recruit u-md-min">
+          <div class="sidebar-headline__group">
+            <span class="sidebar-headline__alphabet">RECRUIT</span>
+            <h3 class="sidebar-headline">採用情報</h3>
+          </div>
+          <a href="https://www.gpol.co.jp/recruit/recruitinfo/" target="_blank" class="sidebar-recruit__btn">
+            募集職種を見る
+            <i class="c-ico-blank-02"><svg><use xlink:href="#ico-blank01"></use></svg></i>
+          </a>
+        </div>
+        <div class="sidebar-sns u-md-min">
+          <div class="sidebar-sns__headline">
+            <h3 class="sidebar-sns__ttl">
+              Follow us
+              <img src="/blog/assets/images/thumbsup.png" alt="" width="39" height="43">
+            </h3>
+            <span class="sidebar-sns__info">最新情報をおしらせします</span>
+          </div>
+          <div class="sidebar-sns__content">
+            <h4 class="sidebar-sns__official">公式SNS</h4>
+            <ul class="sidebar-sns__list">
+              <li>
+                <a href="https://x.com/gpol_tw" target="_blank" class="share-btn">
+                  <img src="/blog/assets/images/x_icon.png" alt="X">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/gpol.fb" target="_blank" class="share-btn">
+                  <img src="/blog/assets/images/fb_icon.png" alt="Facebook">
+                </a>
+              </li>
+              <li>
+                <a href="https://note.com/gpol_pr" target="_blank" class="share-btn">
+                  <img src="/blog/assets/images/note_icon.png" alt="note">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </Container>
+
+  <Footer />
+</Page>
+</Base>
+
+<style lang="scss">
+  @use '../../scss/foundation/setting' as *;
+
+  .relation-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    @include smMin {
+      justify-content: space-between;
+    }
+    @include mdMax {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+    @include smMax {
+      row-gap: sm_vw(100);
+      padding-right: sm_vw(40);
+      padding-left: sm_vw(40);
+    }
+  }
+</style>
+

@@ -7,13 +7,10 @@ import Page from './layouts/page.astro';
 import Header from './layouts/header.astro';
 import Footer from './layouts/footer.astro';
 import RelationCard from '../components/RelationCard.astro';
+import RelationList from '../components/RelationList.astro';
 import CompanyList from '../components/CompanyList.astro';
 import ValuesList from '../components/ValuesList.astro';
 import WorkList from '../components/WorkList.astro';
-import type { Article } from '../types/article';
-import articlesData from '../data/articles.json';
-
-const articles: Article[] = articlesData;
 ---
 
 <Base 
@@ -158,21 +155,7 @@ const articles: Article[] = articlesData;
         <div class="newest-container flex-container">
           <div class="newest-container--main main-content">
             <div class="relation">
-              <div class="relation-list">
-                {articles.map((article) => (
-                  <RelationCard
-                    href={article.href}
-                    imageSrc={article.imageSrc}
-                    imageSrcSet={article.imageSrcSet}
-                    categoryAlphabet={article.category.alphabet}
-                    categoryLabel={article.category.label}
-                    date={article.date}
-                    dateTime={article.dateTime}
-                    title={article.title}
-                    tags={article.tags}
-                  />
-                ))}
-              </div>
+              <RelationList />
             </div>
             <div class="relation-more">
               <a href="all.html">
