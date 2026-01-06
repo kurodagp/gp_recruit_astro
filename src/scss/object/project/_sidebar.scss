@@ -1,0 +1,370 @@
+@charset "utf-8";
+@use "../../foundation/setting" as *;
+
+//==========================================================================
+//_sidebar
+//==========================================================================
+
+//-----------------------------------------------------------------
+//.p-sidebar
+//-----------------------------------------------------------------
+.p-sidebar {
+  &-headline {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $colorPlain;
+      margin: 4px 0 0 6px;
+  
+      @media (min-width: 1120px) {
+        font-size: 1.3rem;
+        margin: 4px 0 0 12px;
+      }
+  
+      @include mdMax {
+        font-size: 1.3rem;
+      }
+  
+      @include smMax {
+        font-size: sm_vw(28);
+        margin: 0 0 0 sm_vw(20);
+      }
+  
+      &__group {
+        display: flex;
+        margin: 0 0 20px;
+  
+        @include smMax {
+          align-items: center;
+          margin-bottom: sm_vw(40);
+        }
+      }
+  
+      &__alphabet {
+        font-family: $font-en;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #000000;
+  
+        @media (min-width: 1120px) {
+          font-size: 2rem;
+        }
+  
+        @include mdMax {
+          font-size: 1.8rem;
+        }
+  
+        @include smMax {
+          font-size: sm_vw(44);
+        }
+      }
+    }
+  
+    &-category{
+      padding-bottom: 4rem;
+      border-bottom: 1px solid #D1D1D1;
+      @include smMax{
+        padding-bottom: sm_vw(80);
+      }
+      &__list{
+        font-size: 1.4rem;
+        line-height: 1.57;
+        @include smMax{
+          font-size: sm_vw(26);
+        }
+        @include smMax{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        & li{
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          @include smMax{
+            width: 42%;
+            margin-bottom: sm_vw(46);
+          }
+        & a{
+          position: relative;
+          @include smMax{
+          display: block;
+          width: 100%;
+          }
+          &::before{
+          position: absolute;
+          bottom: -0.3em;
+          left: 0;
+          content: '';
+          width: 0;
+          height: 1px;
+          background-color: #000;
+          transition: all 0.3s;
+          @include smMax{
+            bottom: sm_vw(-16);
+            width: 100%;
+          }
+          }
+          @include hover{
+          &::before{
+            width: calc(100% + 2px);
+          }
+          }
+        }
+        & span.en{
+          padding-left: 0;
+          font-family: $font-en;
+          color: $colorMain;
+          letter-spacing: calc(40 / 1000 * 1em);
+          margin-right: .5em;
+          &::after {
+          content: '';
+          width: 1px;
+          height: 0.9em;
+          margin-left: .6em;
+          background-color: $colorMain;
+          display: inline-block;
+          position: relative;
+          top: 0.1em;
+          }
+        }
+        & span{
+          color: $colorPlain;
+          padding-left: 1rem;
+          @include smMax{
+          padding-left: 1em;
+          }
+        }
+        }
+      }
+      }
+      &-tag{
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid #D1D1D1;
+      @include smMax{
+        padding-top: sm_vw(80);
+        padding-bottom: sm_vw(80);
+      }
+      &__list{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 1.8rem;
+        column-gap: 0.8rem;
+        @include smMax{
+        row-gap: sm_vw(40);
+        column-gap: sm_vw(20);
+        }
+        & li{
+          width: fit-content;
+          height: fit-content;
+        }
+      }
+      &__btn{
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        @include smMax{
+        font-size: sm_vw(24);
+        line-height: 1.2;
+        padding: sm_vw(10) sm_vw(25);
+        }
+        @include hover{
+        color: #FFF;
+        background-color: #000;
+        }
+      }
+    }
+    &-recommended{
+      padding-bottom: 4rem;
+      padding-top: 4rem;
+      @include smMin{
+        border-bottom: 1px solid #D1D1D1;
+      }
+      @include smMax{
+        padding-bottom: 0;
+      }
+      &__list{
+        & li{
+          margin-bottom: 16px;
+          @include smMax{
+            margin-bottom: sm_vw(40);
+          }
+          & a{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include hover{
+              opacity: 0.6;
+              & img{
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+      &__thumbnail{
+        width: 47%;
+        overflow: hidden;
+        img {
+          pointer-events: none;
+        }
+      }
+      &__content{
+        width: 47%;
+      }
+      &__tag{
+        font-family: $font-en;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $colorPlain;
+        vertical-align: top;
+        @include smMax{
+          font-size: sm_vw(24);
+        }
+      }
+      &__ttl{
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.4;
+        @include smMax{
+          font-size: sm_vw(28);
+        }
+      }
+    }
+    &-recruit{
+      padding: 3.2rem 3.4rem;
+      margin-top: 60px;
+      background-color: #F2F4F5;
+      &__btn{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.4rem;
+        line-height: 2.56;
+        color: #FFFFFF;
+        padding: 1.2rem;
+        margin-top: 20px;
+        background-color: $colorMain;
+        z-index: 1;
+        border: 1px solid #000;
+        &::before{
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          width: 0;
+          height: 100%;
+          background-color: #FFF;
+          transition: all 0.3s;
+          z-index: -1;
+        }
+        & svg{
+          transition: all 0.3s;
+        }
+        @include hover{
+          color: #000;
+          & svg{
+            fill: #000;
+          }
+          &::before{
+            width: 100%;
+          }
+        }
+      }
+    }
+    &-sns{
+      margin-top: 60px;
+      &__headline{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      &__ttl{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: $font-en;
+        font-size: 2rem;
+        font-weight: 700;
+        & img{
+          width: 19.22px;
+          height: 21.36px;
+        }
+      }
+      &__info{
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 500;
+        &::before{
+          position: absolute;
+          bottom: -10px;
+          left: -24.4px;
+          transform: rotate(-20deg);
+          content: '';
+          width: 1px;
+          height: 40px;
+          background-color: $colorPlain;
+        }
+        &::after{
+          position: absolute;
+          right: -24.4px;
+          bottom: -10px;
+          transform: rotate(20deg);
+          content: '';
+          width: 1px;
+          height: 40px;
+          background-color: $colorPlain;
+        }
+      }
+      &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        padding: 1.9rem;
+        margin-top: 23px;
+        border: 1px solid #D1D1D1;
+        @media (min-width: 1100px){
+          flex-direction: row;
+          justify-content: center;
+          gap: 1.6rem;
+        }
+      }
+      &__official{
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+      &__list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        & li{
+          width: 3.2rem;
+          height: 3.2rem;
+          & a{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .share-btn{
+          transition: opacity 0.4s;
+          @include hover{
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+}
+
+
+
