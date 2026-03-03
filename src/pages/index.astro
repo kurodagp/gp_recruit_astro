@@ -8,6 +8,11 @@ import Header from './layouts/header.astro';
 import Footer from './layouts/footer.astro';
 import Anchor from './component/anchor.astro';
 
+import RelationCard from '../components/RelationCard.astro';
+import RelationList from '../components/RelationList.astro';
+import CompanyList from '../components/CompanyList.astro';
+import ValuesList from '../components/ValuesList.astro';
+import WorkList from '../components/WorkList.astro';
 ---
 
 <Base 
@@ -152,101 +157,7 @@ import Anchor from './component/anchor.astro';
         <div class="newest-container flex-container">
           <div class="newest-container--main main-content">
             <div class="relation">
-              <div class="relation-list">
-                <div class="relation-card">
-                  <a href="/blog/23.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/23/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">VALUES</span><span class="relation-link__caption">価値観</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-11-07">2025.11.20</time>
-                    <h4 class="relation-link__ttl">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">システムエンジニア</li>
-                      <li class="relation-tag">デジタルプロダクションG</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/22.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/22/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-11-07">2025.11.07</time>
-                    <h4 class="relation-link__ttl">エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">システムエンジニア</li>
-                      <li class="relation-tag">デジタルプロダクションG</li>
-                      <li class="relation-tag">カルチャー</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/21.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/21/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-10-30">2025.10.30</time>
-                    <h4 class="relation-link__ttl">「もっと良くするために」ジーピーオンラインが動き出したこと</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">新卒</li>
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">行動指針</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/20.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/20/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">PEOPLE</span><span class="relation-link__caption">ひと</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-09-26">2025.09.26</time>
-                    <h4 class="relation-link__ttl">経験を“次のステージ”へ ─ 広がり続けるデザインキャリア</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webデザイナー</li>
-                      <li class="relation-tag">アートディレクター</li>
-                      
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/19.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/19/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">COMPANY</span><span class="relation-link__caption">はたらく環境</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-08-29">2025.08.29</time>
-                    <h4 class="relation-link__ttl">大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる“新しい働き方と挑戦”</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">新卒</li>
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webディレクター</li>
-                      <li class="relation-tag">未経験者</li>
-                    </ul>
-                  </a>
-                </div>
-                <div class="relation-card">
-                  <a href="/blog/18.html" class="relation-link">
-                    <figure class="relation-link__fig">
-                      <img src="/blog/assets/images/blog/18/kv.jpg" alt="">
-                      <figcaption class="relation-link__caption__group"><span class="relation-link__caption--alphabet">WORK</span><span class="relation-link__caption">仕事</span></figcaption>
-                    </figure>
-                    <time class="relation-link__time" datetime="2025-07-29">2025.07.29</time>
-                    <h4 class="relation-link__ttl">挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く</h4>
-                    <ul class="relation-tagList">
-                      <li class="relation-tag">中途</li>
-                      <li class="relation-tag">Webディレクター</li>
-                      <li class="relation-tag">プロデュースG</li>
-                    </ul>
-                  </a>
-                </div>
-              </div>
+              <RelationList />
             </div>
             <div class="relation-more">
               <a href="all.html">
@@ -488,52 +399,7 @@ import Anchor from './component/anchor.astro';
           <b class="typing typing01">全員で<br class="u-sm-max">居心地の良い場所を<br class="u-sm-max">つくっています</b>
         </h2>
         <p class="company__lead">ジーピーオンラインは毎日過ごす大切な場所。<br>社員の成長とともに、会社も日々成長していく。</p>
-        <ul class="company-list">
-          <li class="company-list__item">
-            <a href="/blog/21.html">
-              <figure class="company-list__img"><img src="/blog/assets/images/blog/21/kv.jpg" alt=""></figure>
-              <div class="company-list__detail">
-                <p class="company-list__date">2025.10.30</p>
-                <p class="company-list__title">「もっと良くするために」ジーピーオンラインが動き出したこと</p>
-                <ul class="company-list__tag">
-                  <li class="archive-tag">新卒</li>
-                  <li class="archive-tag">中途</li>
-                  <li class="archive-tag">行動指針</li>
-                </ul>
-              </div>
-            </a>
-          </li>
-          <li class="company-list__item">
-            <a href="/blog/19.html">
-              <figure class="company-list__img"><img src="/blog/assets/images/blog/19/kv.jpg" alt=""></figure>
-              <div class="company-list__detail">
-                <p class="company-list__date">2025.08.29</p>
-                <p class="company-list__title">大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる“新しい働き方と挑戦”</p>
-                <ul class="company-list__tag">
-                  <li>新卒</li>
-                  <li>中途</li>
-                  <li>Webディレクター</li>
-                  <li>未経験者</li>
-                </ul>
-              </div>
-            </a>
-          </li>
-          <li class="company-list__item">
-            <a href="/blog/14.html">
-              <figure class="company-list__img"><img src="/blog/assets/images/blog/14/kv.jpg" alt=""></figure>
-              <div class="company-list__detail">
-                <p class="company-list__date">2025.05.23</p>
-                <p class="company-list__title">「この人たちと働きたい」と思えた瞬間が、決断の理由</p>
-                <ul class="company-list__tag">
-                  <li>新卒</li>
-                  <li>Webディレクター</li>
-                  <li>プロデュースG</li>
-                  <li>未経験者</li>
-                </ul>
-              </div>
-            </a>
-          </li>
-        </ul>
+        <CompanyList />
         <div class="company-more">
           <a href="company.html">
             <div class="company-more__btn">READ MORE</div>
@@ -549,61 +415,8 @@ import Anchor from './component/anchor.astro';
           <span>価値観</span>
           <b class="typing typing01">常に“ありがとう”を<br class="u-sm-max">考え、行動する</b>
         </h2>
-        <p class="values__lead">仲間からの“ありがとう”は、<br class="u-sm-max">高いモチベーション。<br>お客さまからの“ありがとう”で、さらなる成長を。</p>
-        <ul class="values-list">
-          <li class="values-list__item values-list__item--main">
-            <a href="/blog/23.html">
-              <figure class="values-list__img"><img src="/blog/assets/images/blog/23/kv.jpg" alt=""></figure>
-              <div class="values-list__wrap">
-                <div class="values-list__copy">
-                  <p>楽しむことを原動力に、<br>誠実にものづくりに向き合う。<br>それがチームの<br>大きな力になります。</p>
-                </div>
-                <div class="values-list__detail">
-                  <p class="values-list__date">2025.11.20</p>
-                  <p class="values-list__title">技術は変わっても、“つくる楽しさ”は変わらない。エンジニアが語る仕事の原点</p>
-                  <ul class="values-list__tag">
-                    <li>中途</li>
-                    <li>システムエンジニア</li>
-                    <li>デジタルプロダクションG</li>
-                  </ul>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="values-list__item values-list__item">
-            <a href="/blog/15.html">
-              <figure class="values-list__img"><img src="/blog/assets/images/blog/15/kv.jpg" alt=""></figure>
-              <div class="values-list__wrap">
-                <div class="values-list__detail">
-                  <p class="values-list__date">2025.05.29</p>
-                  <p class="values-list__title">共創はこうして生まれる ─ 愛されディレクターの仕事スタイル</p>
-                  <ul class="values-list__tag">
-                    <li>Webディレクター</li>
-                    <li>プロデュースG</li>
-                  </ul>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="values-list__item values-list__item">
-            <a href="/blog/2.html">
-              <figure class="values-list__img"><img src="/blog/assets/images/blog/2/kv.jpg" alt=""></figure>
-              <div class="values-list__wrap">
-                <div class="values-list__detail">
-                  <p class="values-list__date">2024.10.09</p>
-                  <p class="values-list__title">顧客視点に立てば、成果は後からついてくる</p>
-                  <ul class="values-list__tag">
-                    <li>アカウントプランナー</li>
-                    <li>企画営業</li>
-                    <li>プロデューサー</li>
-                    <li>アカウントDiv</li>
-                    <li>行動指針</li>
-                  </ul>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
+        <p class="values__lead">仲間からの"ありがとう"は、<br class="u-sm-max">高いモチベーション。<br>お客さまからの"ありがとう"で、さらなる成長を。</p>
+        <ValuesList />
         <div class="values-more">
           <a href="values.html">
             <div class="values-more__btn">READ MORE</div>
@@ -620,53 +433,7 @@ import Anchor from './component/anchor.astro';
           <b class="typing typing01">私たちの<br class="u-sm-max">“成長”のヒケツ</b>
         </h2>
         <p class="work__lead">人それぞれ、仕事における成長の機会や時間は違う。<br>だけど、ここでの仕事はきっとあなたが望む成長になる。</p>
-        <ul class="work-list">
-          <li class="work-list__item">
-            <a href="/blog/22.html">
-              <div class="work-list__detail">
-                <ul class="work-list__tag">
-                  <li>中途</li>
-                  <li>システムエンジニア</li>
-                  <li>デジタルプロダクションG</li>
-                  <li>カルチャー</li>
-                </ul>
-                <p class="work-list__copy">技術を「個人」から「チームで使いこなす」へ。</p>
-                <p class="work-list__title">エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性</p>
-              </div>
-              <figure class="work-list__img"><img src="/blog/assets/images/blog/22/kv.jpg" alt=""></figure>
-            </a>
-          </li>
-          <li class="work-list__item">
-            <a href="/blog/18.html">
-              <div class="work-list__detail">
-                <ul class="work-list__tag">
-                  <li>中途</li>
-                  <li>Webディレクター</li>
-                  <li>プロデュースG</li>
-                </ul>
-                <p class="work-list__copy">初めての解析業務が導いた、一歩先を見据える提案力</p>
-                <p class="work-list__title">挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く</p>
-              </div>
-              <figure class="work-list__img"><img src="/blog/assets/images/blog/18/kv.jpg" alt=""></figure>
-            </a>
-          </li>
-          <li class="work-list__item">
-            <a href="/blog/13.html">
-              <div class="work-list__detail">
-                <ul class="work-list__tag">
-                  <li>採用サイト</li>
-                  <li>コンテンツディレクター</li>
-                  <li>プランナー</li>
-                  <li>中途</li>
-                  <li>コミュニケーションデザイン事業部</li>
-                </ul>
-                <p class="work-list__copy">多様な施策を駆使しビジネスの可能性を広げていく</p>
-                <p class="work-list__title">コミュニケーションデザイン事業部の魅力に迫る</p>
-              </div>
-              <figure class="work-list__img"><img src="/blog/assets/images/blog/13/kv.jpg" alt=""></figure>
-            </a>
-          </li>
-        </ul>
+        <WorkList />
         <div class="work-more">
           <a href="work.html">
             <div class="work-more__btn">READ MORE</div>

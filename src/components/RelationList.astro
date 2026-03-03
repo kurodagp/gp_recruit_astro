@@ -1,0 +1,67 @@
+---
+import RelationCard from './RelationCard.astro';
+import type { Article } from '../types/article';
+import articlesData from '../data/articles.json';
+
+interface Props {
+  limit?: number;
+  category?: string;
+}
+
+const { limit, category } = Astro.props;
+
+const articles: Article[] = articlesData;
+
+let filteredArticles = articles;
+
+// カテゴリーフィルタリング
+if (category) {
+  filteredArticles = filteredArticles.filter(
+    article => article.category.alphabet === category
+  );
+}
+
+// 表示件数制限
+if (limit) {
+  filteredArticles = filteredArticles.slice(0, limit);
+}
+---
+
+<div class="relation-list">
+  {filteredArticles.map((article) => (
+    <RelationCard
+      href={article.href}
+      imageSrc={article.imageSrc}
+      imageSrcSet={article.imageSrcSet}
+      categoryAlphabet={article.category.alphabet}
+      categoryLabel={article.category.label}
+      date={article.date}
+      dateTime={article.dateTime}
+      title={article.title}
+      tags={article.tags}
+    />
+  ))}
+</div>
+
+<style lang="scss">
+  @use '../scss/foundation/setting' as *;
+
+  .relation-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    @include smMin {
+      justify-content: space-between;
+    }
+    @include mdMax {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+    @include smMax {
+      row-gap: sm_vw(100);
+      padding-right: sm_vw(40);
+      padding-left: sm_vw(40);
+    }
+  }
+</style>

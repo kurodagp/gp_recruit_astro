@@ -1,0 +1,61 @@
+---
+interface Props {
+  page: {
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev?: string;
+      next?: string;
+    };
+  };
+}
+
+const { page } = Astro.props;
+---
+
+<ul class="p-pager">
+  {page.url.prev && (
+    <li class="p-pager__prev">
+      <a href={page.url.prev}>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.899 8.707">
+            <g transform="translate(0 8.353) rotate(-90)">
+              <path d="M0,0H12" transform="translate(4) rotate(90)"/>
+              <path d="M0,0,4,4,0,8" transform="translate(8 8.192) rotate(90)" />
+            </g>
+          </svg>
+        </span>
+      </a>
+    </li>
+  )}
+  
+  {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((num) => (
+    num === page.currentPage ? (
+      <li class="p-pager__current">
+        <span class="num">{num}</span>
+      </li>
+    ) : (
+      <li>
+        <a href={num === 1 ? '/blog/all/' : `/blog/all/${num}/`}>
+          <span class="num">{num}</span>
+        </a>
+      </li>
+    )
+  ))}
+  
+  {page.url.next && (
+    <li class="p-pager__next">
+      <a href={page.url.next}>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.899 8.707">
+            <g transform="translate(0 8.353) rotate(-90)">
+              <path d="M0,0H12" transform="translate(4) rotate(90)"/>
+              <path d="M0,0,4,4,0,8" transform="translate(8 8.192) rotate(90)" />
+            </g>
+          </svg>
+        </span>
+      </a>
+    </li>
+  )}
+</ul>
+

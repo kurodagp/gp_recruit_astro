@@ -1,0 +1,146 @@
+[
+  {
+    "id": 23,
+    "href": "/blog/23.html",
+    "imageSrc": "/blog/assets/images/blog/23/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/23/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "VALUES",
+      "label": "価値観"
+    },
+    "date": "2025.11.20",
+    "dateTime": "2025-11-20",
+    "title": "技術は変わっても、\"つくる楽しさ\"は変わらない。エンジニアが語る仕事の原点",
+    "tags": ["中途", "システムエンジニア", "デジタルプロダクションG"],
+    "copy": "楽しむことを原動力に、<br>誠実にものづくりに向き合う。<br>それがチームの<br>大きな力になります。"
+  },
+  {
+    "id": 22,
+    "href": "/blog/22.html",
+    "imageSrc": "/blog/assets/images/blog/22/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/22/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "WORK",
+      "label": "仕事"
+    },
+    "date": "2025.11.07",
+    "dateTime": "2025-11-07",
+    "title": "エンジニアが築く、AI時代の共創力。学び合う文化で広がる可能性",
+    "tags": ["中途", "システムエンジニア", "デジタルプロダクションG", "カルチャー"],
+    "copy": "技術を「個人」から「チームで使いこなす」へ。"
+  },
+  {
+    "id": 21,
+    "href": "/blog/21.html",
+    "imageSrc": "/blog/assets/images/blog/21/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/21/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "COMPANY",
+      "label": "はたらく環境"
+    },
+    "date": "2025.10.30",
+    "dateTime": "2025-10-30",
+    "title": "「もっと良くするために」ジーピーオンラインが動き出したこと",
+    "tags": ["新卒", "中途", "行動指針"]
+  },
+  {
+    "id": 20,
+    "href": "/blog/20.html",
+    "imageSrc": "/blog/assets/images/blog/20/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/20/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "PEOPLE",
+      "label": "ひと"
+    },
+    "date": "2025.09.26",
+    "dateTime": "2025-09-26",
+    "title": "経験を\"次のステージ\"へ ─ 広がり続けるデザインキャリア",
+    "tags": ["中途", "Webデザイナー", "アートディレクター"]
+  },
+  {
+    "id": 19,
+    "href": "/blog/19.html",
+    "imageSrc": "/blog/assets/images/blog/19/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/19/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "COMPANY",
+      "label": "はたらく環境"
+    },
+    "date": "2025.08.29",
+    "dateTime": "2025-08-29",
+    "title": "大阪「JAM BASE」にサテライトオフィス開設！新拠点で広がる\"新しい働き方と挑戦\"",
+    "tags": ["新卒", "中途", "Webディレクター", "未経験者"]
+  },
+  {
+    "id": 18,
+    "href": "/blog/18.html",
+    "imageSrc": "/blog/assets/images/blog/18/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/18/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "WORK",
+      "label": "仕事"
+    },
+    "date": "2025.07.29",
+    "dateTime": "2025-07-29",
+    "title": "挑戦の機会は自分でつくれる！サポート体制がキャリアを切り開く",
+    "tags": ["中途", "Webディレクター", "プロデュースG"],
+    "copy": "初めての解析業務が導いた、一歩先を見据える提案力"
+  },
+  {
+    "id": 15,
+    "href": "/blog/15.html",
+    "imageSrc": "/blog/assets/images/blog/15/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/15/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "VALUES",
+      "label": "価値観"
+    },
+    "date": "2025.05.29",
+    "dateTime": "2025-05-29",
+    "title": "共創はこうして生まれる ─ 愛されディレクターの仕事スタイル",
+    "tags": ["Webディレクター", "プロデュースG"]
+  },
+  {
+    "id": 14,
+    "href": "/blog/14.html",
+    "imageSrc": "/blog/assets/images/blog/14/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/14/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "COMPANY",
+      "label": "はたらく環境"
+    },
+    "date": "2025.05.23",
+    "dateTime": "2025-05-23",
+    "title": "「この人たちと働きたい」と思えた瞬間が、決断の理由",
+    "tags": ["新卒", "Webディレクター", "プロデュースG", "未経験者"]
+  },
+  {
+    "id": 13,
+    "href": "/blog/13.html",
+    "imageSrc": "/blog/assets/images/blog/13/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/13/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "WORK",
+      "label": "仕事"
+    },
+    "date": "2025.04.07",
+    "dateTime": "2025-04-07",
+    "title": "コミュニケーションデザイン事業部の魅力に迫る",
+    "tags": ["採用サイト", "コンテンツディレクター", "プランナー", "中途", "コミュニケーションデザイン事業部"],
+    "copy": "多様な施策を駆使しビジネスの可能性を広げていく"
+  },
+  {
+    "id": 2,
+    "href": "/blog/2.html",
+    "imageSrc": "/blog/assets/images/blog/2/kv.jpg",
+    "imageSrcSet": "/blog/assets/images/blog/2/kv@2x.jpg 2x",
+    "category": {
+      "alphabet": "VALUES",
+      "label": "価値観"
+    },
+    "date": "2024.10.09",
+    "dateTime": "2024-10-09",
+    "title": "顧客視点に立てば、成果は後からついてくる",
+    "tags": ["アカウントプランナー", "企画営業", "プロデューサー", "アカウントDiv", "行動指針"]
+  }
+]

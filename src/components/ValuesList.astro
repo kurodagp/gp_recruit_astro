@@ -1,0 +1,180 @@
+---
+import type { Article } from '../types/article';
+import articlesData from '../data/articles.json';
+
+const articles: Article[] = articlesData;
+
+// カテゴリー"VALUES"の記事をフィルタリングし、最新3件を取得
+const valuesArticles = articles
+  .filter(article => article.category.alphabet === "VALUES")
+  .slice(0, 3);
+---
+
+<ul class="values-list">
+  {valuesArticles.map((article, index) => (
+    <li class={`values-list__item ${index === 0 ? 'values-list__item--main' : ''}`}>
+      <a href={article.href}>
+        <figure class="values-list__img">
+          <img src={article.imageSrc} alt="" />
+        </figure>
+        <div class="values-list__wrap">
+          {index === 0 && article.copy && (
+            <div class="values-list__copy">
+              <p set:html={article.copy} />
+            </div>
+          )}
+          <div class="values-list__detail">
+            <p class="values-list__date">{article.date}</p>
+            <p class="values-list__title">{article.title}</p>
+            <ul class="values-list__tag">
+              {article.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style lang="scss">
+  @use '../scss/foundation/setting' as *;
+
+  .values-list {
+    margin-top: 80px;
+    border-top: solid 1px #9EA5AB;
+    @include smMax{
+      margin-top: sm_vw(100);
+    }
+    &__item {
+      border-bottom: solid 1px #9EA5AB;
+      > a {
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+        @include smMax{
+          padding: sm_vw(80) 0;
+          flex-direction: column;
+        }
+        @include hover{
+          opacity: 0.7;
+          .values-list__img img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    &__copy {
+      margin-bottom: 20px;
+      p {
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        display: inline;
+        padding: 0 .3em .1em;
+        line-height: 1.8;
+        background-color: #000;
+        color: #FFF;
+        font-size: 2.8rem;
+        font-weight: 500;
+        @include smMax{
+          font-size: sm_vw(36);
+        }
+      }
+    }
+    &__img {
+      @include smMin {
+        width: 360px;
+        margin-right: 40px;
+        overflow: hidden;
+      }
+      @include smMax {
+        width: 100%;
+      }
+      img {
+        pointer-events: none;
+      }
+    }
+    &__detail {
+      @include smMax {
+        margin-top: sm_vw(20);
+      }
+    }
+    &__tag {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      li {
+        margin-right: 8px;
+        margin-bottom: 8px;
+        height: 24px;
+        padding: 0 10px;
+        background: #FFF;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #000;
+        @include smMax{
+          font-size: sm_vw(22);
+          height: sm_vw(40);
+          padding: 0 sm_vw(14);
+        }
+      }
+    }
+    &__date {
+      color: $colorPlain;
+      font-family: $font-en;
+      font-weight: 500;
+      font-size: 1.2rem;
+      @include smMax {
+        font-size: sm_vw(24);
+      }
+    }
+    &__title {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 1.8;
+      margin-top: 5px;
+      @include smMax {
+        font-size: sm_vw(32);
+        margin-top: sm_vw(5);
+      }
+    }
+    &__item--main {
+      > a {
+        @include smMin {
+          align-items: normal;
+        }
+        @include smMax {
+          flex-direction: column;
+        }
+      }
+      .values-list__img {
+        width: 820px;
+        @include smMax {
+          width: 100%;
+        }
+      }
+      .values-list__wrap {
+        @include smMin {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          max-width: 35%;
+        }
+        @include smMax {
+          margin-top: sm_vw(40);
+        }
+      }
+      .values-list__detail {
+        @include smMax {
+          width: 100%;
+          margin-top: sm_vw(40);
+        }
+      }
+    }
+  }
+</style>
+
