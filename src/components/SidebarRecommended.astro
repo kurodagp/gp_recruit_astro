@@ -1,0 +1,45 @@
+---
+import articlesData from "../data/articles.json";
+
+// おすすめ記事の抽出と表示順の設定
+const recommendedArticles = articlesData
+  .filter((article) => article.recommend)
+  .sort((a, b) => {
+    const orderA = a.recommendOrder ?? 999;
+    const orderB = b.recommendOrder ?? 999;
+    return orderA - orderB;
+  });
+---
+
+<div class="p-sidebar-recommended">
+  <div class="p-sidebar-headline__group">
+    <span class="p-sidebar-headline__alphabet">RECOMMENDED</span>
+    <h3 class="p-sidebar-headline">おすすめの記事</h3>
+  </div>
+  <ul class="p-sidebar-recommended__list">
+    {
+      recommendedArticles.map((article) => (
+        <li>
+          <a href={article.href}>
+            <div class="p-sidebar-recommended__thumbnail">
+              <img
+                src={article.imageSrc}
+                srcset={article.imageSrcSet}
+                width="840"
+                height="441"
+                alt=""
+              />
+            </div>
+            <div class="p-sidebar-recommended__content">
+              <span class="p-sidebar-recommended__tag">
+                #{article.category.alphabet}
+              </span>
+              <h4 class="p-sidebar-recommended__ttl">{article.title}</h4>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+

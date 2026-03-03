@@ -1,0 +1,28 @@
+---
+const categories = [
+  { href: "all.html", en: "ALL", label: "すべて" },
+  { href: "people.html", en: "PEOPLE", label: "ひと" },
+  { href: "company.html", en: "COMPANY", label: "はたらく環境" },
+  { href: "values.html", en: "VALUE", label: "価値観" },
+  { href: "work.html", en: "WORK", label: "仕事" },
+];
+---
+
+<div class="p-sidebar-category">
+  <div class="p-sidebar-headline__group">
+    <span class="p-sidebar-headline__alphabet">CATEGORY</span>
+    <h3 class="p-sidebar-headline">カテゴリー</h3>
+  </div>
+  <ul class="p-sidebar-category__list">
+    {
+      categories.map((category) => (
+        <li>
+          <a href={category.href}>
+            <span class="en">{category.en}</span>
+            {category.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
