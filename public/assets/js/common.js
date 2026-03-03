@@ -144,26 +144,26 @@ function anker() {
 
 // nav anker
 // ---------------------------------------------------
-function navAnchor() {
-  let headerHeight = $('.l-header').outerHeight();
-  if ($('body').hasClass('is-view-pc') || $('body').hasClass('is-view-tab')) {
-    headerHeight -= 25;
-  }
-  const url = new URL(location.href);
-  const params = url.searchParams;
-  if(!params.has('anchor')) return;
-
-  setTimeout(function(){
-    const anchorId = params.get('anchor');
-    const anchorTarget = $(`#${anchorId}`);
-    if (anchorTarget) {
-      let position = anchorTarget.offset().top - headerHeight;
-      $('html, body').animate({
-        scrollTop: position
-      },500);
-    }
-  }, 0);
-}
+//function navAnchor() {
+//  let headerHeight = $('.l-header').outerHeight();
+//  if ($('body').hasClass('is-view-pc') || $('body').hasClass('is-view-tab')) {
+//    headerHeight -= 25;
+//  }
+//  const url = new URL(location.href);
+//  const params = url.searchParams;
+//  if(!params.has('anchor')) return;
+//
+//  setTimeout(function(){
+//    const anchorId = params.get('anchor');
+//    const anchorTarget = $(`#${anchorId}`);
+//    if (anchorTarget) {
+//      let position = anchorTarget.offset().top - headerHeight;
+//      $('html, body').animate({
+//        scrollTop: position
+//      },500);
+//    }
+//  }, 0);
+//}
 
 //animation
 //---------------------------------------------------------
@@ -209,7 +209,7 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  navAnchor();
+  //navAnchor();
 });
 
 
