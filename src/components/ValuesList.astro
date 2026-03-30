@@ -1,33 +1,34 @@
 ---
 import type { Article } from '../types/article';
-import articlesData from '../data/articles.json';
+import { fetchArticles } from '../lib/nilto';
+import { formatDate, getTags } from '../lib/article-helpers';
 
-const articles: Article[] = articlesData;
+const articles: Article[] = await fetchArticles();
 
 // カテゴリー"VALUES"の記事をフィルタリングし、最新3件を取得
 const valuesArticles = articles
-  .filter(article => article.category.alphabet === "VALUES")
+  .filter(article => article.category?.category_name === "VALUES")
   .slice(0, 3);
 ---
 
 <ul class="values-list">
   {valuesArticles.map((article, index) => (
     <li class={`values-list__item ${index === 0 ? 'values-list__item--main' : ''}`}>
-      <a href={article.href}>
+      <a href={`/blog/${article.slug}.html`}>
         <figure class="values-list__img">
-          <img src={article.imageSrc} alt="" />
+          <img src={article.main_visual?.url} alt={article.main_visual?.alt ?? ''} />
         </figure>
         <div class="values-list__wrap">
-          {index === 0 && article.copy && (
+          {index === 0 && article.highlight_copy && (
             <div class="values-list__copy">
-              <p set:html={article.copy} />
+              <p set:html={article.highlight_copy?.replace(/\n/g, '<br>')} />
             </div>
           )}
           <div class="values-list__detail">
-            <p class="values-list__date">{article.date}</p>
+            <p class="values-list__date">{formatDate(article.published_at)}</p>
             <p class="values-list__title">{article.title}</p>
             <ul class="values-list__tag">
-              {article.tags.map((tag) => (
+              {getTags(article).map((tag) => (
                 <li>{tag}</li>
               ))}
             </ul>

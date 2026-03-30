@@ -1,32 +1,33 @@
 ---
 import type { Article } from '../types/article';
-import articlesData from '../data/articles.json';
+import { fetchArticles } from '../lib/nilto';
+import { getTags } from '../lib/article-helpers';
 
-const articles: Article[] = articlesData;
+const articles: Article[] = await fetchArticles();
 
 // カテゴリー"WORK"の記事をフィルタリングし、最新3件を取得
 const workArticles = articles
-  .filter(article => article.category.alphabet === "WORK")
+  .filter(article => article.category?.category_name === "WORK")
   .slice(0, 3);
 ---
 
 <ul class="work-list">
   {workArticles.map((article) => (
     <li class="work-list__item">
-      <a href={article.href}>
+      <a href={`/blog/${article.slug}.html`}>
         <div class="work-list__detail">
           <ul class="work-list__tag">
-            {article.tags.map((tag) => (
+            {getTags(article).map((tag) => (
               <li>{tag}</li>
             ))}
           </ul>
-          {article.copy && (
-            <p class="work-list__copy">{article.copy}</p>
+          {article.lead && (
+            <p class="work-list__copy" set:html={article.lead} />
           )}
           <p class="work-list__title">{article.title}</p>
         </div>
         <figure class="work-list__img">
-          <img src={article.imageSrc} alt="" />
+          <img src={article.main_visual?.url} alt={article.main_visual?.alt ?? ''} />
         </figure>
       </a>
     </li>

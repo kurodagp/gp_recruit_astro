@@ -1,27 +1,28 @@
 ---
 import type { Article } from '../types/article';
-import articlesData from '../data/articles.json';
+import { fetchArticles } from '../lib/nilto';
+import { formatDate, getTags } from '../lib/article-helpers';
 
-const articles: Article[] = articlesData;
+const articles: Article[] = await fetchArticles();
 
 // カテゴリー"COMPANY"の記事をフィルタリングし、最新3件を取得
 const companyArticles = articles
-  .filter(article => article.category.alphabet === "COMPANY")
+  .filter(article => article.category?.category_name === "COMPANY")
   .slice(0, 3);
 ---
 
 <ul class="company-list">
   {companyArticles.map((article) => (
     <li class="company-list__item">
-      <a href={article.href}>
+      <a href={`/blog/${article.slug}.html`}>
         <figure class="company-list__img">
-          <img src={article.imageSrc} alt="" />
+          <img src={article.main_visual?.url} alt={article.main_visual?.alt ?? ''} />
         </figure>
         <div class="company-list__detail">
-          <p class="company-list__date">{article.date}</p>
+          <p class="company-list__date">{formatDate(article.published_at)}</p>
           <p class="company-list__title">{article.title}</p>
           <ul class="company-list__tag">
-            {article.tags.map((tag) => (
+            {getTags(article).map((tag) => (
               <li>{tag}</li>
             ))}
           </ul>

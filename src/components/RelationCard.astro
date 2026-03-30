@@ -1,50 +1,45 @@
 ---
+import type { Article } from '../types/article';
+import { formatDate, formatDateTime, getTags } from '../lib/article-helpers';
+
+const CATEGORY_LABEL_MAP: Record<string, string> = {
+  PEOPLE: 'ひと',
+  COMPANY: 'はたらく環境',
+  VALUES: '価値観',
+  WORK: '仕事',
+};
+
 interface Props {
-  href: string;
-  imageSrc: string;
-  imageSrcSet?: string;
+  article: Article;
   imageWidth?: number;
   imageHeight?: number;
-  categoryAlphabet: string;
-  categoryLabel: string;
-  date: string;
-  dateTime: string;
-  title: string;
-  tags: string[];
 }
 
-const {
-  href,
-  imageSrc,
-  imageSrcSet,
-  imageWidth = 420,
-  imageHeight = 220,
-  categoryAlphabet,
-  categoryLabel,
-  date,
-  dateTime,
-  title,
-  tags,
-} = Astro.props;
+const { article, imageWidth = 420, imageHeight = 220 } = Astro.props;
+
+const categoryName = article.category?.category_name ?? '';
+const categoryLabel = CATEGORY_LABEL_MAP[categoryName] ?? categoryName;
+const date = formatDate(article.published_at);
+const dateTime = formatDateTime(article.published_at);
+const tags = getTags(article);
 ---
 
 <div class="relation-card">
-  <a href={href} class="relation-link">
+  <a href={`/blog/${article.slug}.html`} class="relation-link">
     <figure class="relation-link__fig">
       <img
-        src={imageSrc}
-        srcset={imageSrcSet}
-        alt=""
+        src={article.main_visual?.url}
+        alt={article.main_visual?.alt ?? ''}
         width={imageWidth}
         height={imageHeight}
       />
       <figcaption class="relation-link__caption__group">
-        <span class="relation-link__caption--alphabet">{categoryAlphabet}</span>
+        <span class="relation-link__caption--alphabet">{categoryName}</span>
         <span class="relation-link__caption">{categoryLabel}</span>
       </figcaption>
     </figure>
     <time class="relation-link__time" datetime={dateTime}>{date}</time>
-    <h4 class="relation-link__ttl">{title}</h4>
+    <h4 class="relation-link__ttl">{article.title}</h4>
     <ul class="relation-tagList">
       {tags.map((tag) => (
         <li class="relation-tag">{tag}</li>

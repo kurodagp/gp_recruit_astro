@@ -1,14 +1,11 @@
 ---
-import articlesData from "../data/articles.json";
+import type { Article } from '../types/article';
+import { fetchArticles } from '../lib/nilto';
 
-// おすすめ記事の抽出と表示順の設定
-const recommendedArticles = articlesData
-  .filter((article) => article.recommend)
-  .sort((a, b) => {
-    const orderA = a.recommendOrder ?? 999;
-    const orderB = b.recommendOrder ?? 999;
-    return orderA - orderB;
-  });
+const articles: Article[] = await fetchArticles();
+
+// related_articles_listを持つ記事からおすすめ記事を抽出（暫定：最初の3件を表示）
+const recommendedArticles = articles.slice(0, 3);
 ---
 
 <div class="p-sidebar-recommended">
@@ -20,19 +17,18 @@ const recommendedArticles = articlesData
     {
       recommendedArticles.map((article) => (
         <li>
-          <a href={article.href}>
+          <a href={`/blog/${article.slug}.html`}>
             <div class="p-sidebar-recommended__thumbnail">
               <img
-                src={article.imageSrc}
-                srcset={article.imageSrcSet}
+                src={article.main_visual?.url}
                 width="840"
                 height="441"
-                alt=""
+                alt={article.main_visual?.alt ?? ''}
               />
             </div>
             <div class="p-sidebar-recommended__content">
               <span class="p-sidebar-recommended__tag">
-                #{article.category.alphabet}
+                #{article.category?.category_name}
               </span>
               <h4 class="p-sidebar-recommended__ttl">{article.title}</h4>
             </div>

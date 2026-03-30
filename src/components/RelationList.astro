@@ -1,7 +1,7 @@
 ---
 import RelationCard from './RelationCard.astro';
 import type { Article } from '../types/article';
-import articlesData from '../data/articles.json';
+import { fetchArticles } from '../lib/nilto';
 
 interface Props {
   limit?: number;
@@ -10,14 +10,14 @@ interface Props {
 
 const { limit, category } = Astro.props;
 
-const articles: Article[] = articlesData;
+const articles: Article[] = await fetchArticles();
 
 let filteredArticles = articles;
 
 // カテゴリーフィルタリング
 if (category) {
   filteredArticles = filteredArticles.filter(
-    article => article.category.alphabet === category
+    article => article.category?.category_name === category
   );
 }
 
@@ -29,17 +29,7 @@ if (limit) {
 
 <div class="relation-list">
   {filteredArticles.map((article) => (
-    <RelationCard
-      href={article.href}
-      imageSrc={article.imageSrc}
-      imageSrcSet={article.imageSrcSet}
-      categoryAlphabet={article.category.alphabet}
-      categoryLabel={article.category.label}
-      date={article.date}
-      dateTime={article.dateTime}
-      title={article.title}
-      tags={article.tags}
-    />
+    <RelationCard article={article} />
   ))}
 </div>
 

@@ -10,11 +10,11 @@ import RelationCard from '../../components/RelationCard.astro';
 import Pager from '../../components/Pager.astro';
 import type { Article } from '../../types/article';
 import type { Page as AstroPage } from 'astro';
-import articlesData from '../../data/articles.json';
+import { fetchArticles } from '../../lib/nilto';
 
 export async function getStaticPaths({ paginate }: any) {
-  const articles: Article[] = articlesData;
-  
+  const articles: Article[] = await fetchArticles();
+
   return paginate(articles, {
     pageSize: 4
   });
@@ -26,7 +26,7 @@ interface Props {
 
 const { page } = Astro.props;
 
-const pageTitle = page.currentPage === 1 
+const pageTitle = page.currentPage === 1
   ? "記事一覧 | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア"
   : `記事一覧 (${page.currentPage}ページ目) | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア`;
 ---
@@ -59,17 +59,7 @@ const pageTitle = page.currentPage === 1
             <div class="archive-list">
               <div class="relation-list">
                 {page.data.map((article) => (
-                  <RelationCard
-                    href={article.href}
-                    imageSrc={article.imageSrc}
-                    imageSrcSet={article.imageSrcSet}
-                    categoryAlphabet={article.category.alphabet}
-                    categoryLabel={article.category.label}
-                    date={article.date}
-                    dateTime={article.dateTime}
-                    title={article.title}
-                    tags={article.tags}
-                  />
+                  <RelationCard article={article} />
                 ))}
               </div>
             </div>
