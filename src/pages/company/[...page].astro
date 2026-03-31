@@ -19,8 +19,9 @@ import SidebarSns from "../../components/SidebarSns.astro";
 
 export async function getStaticPaths({ paginate }: any) {
   const articles: Article[] = await fetchArticles();
+  const filtered = articles.filter((a) => a.category?.category_name === 'COMPANY');
 
-  return paginate(articles, {
+  return paginate(filtered, {
     pageSize: 4
   });
 }
@@ -36,15 +37,15 @@ const pageTitle = page.currentPage === 1
   : `記事一覧 (${page.currentPage}ページ目) | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア`;
 ---
 
-<Base 
+<Base
   pageTitle={pageTitle}
   pageDescription="GROW-PLATHX [グロウプレイス]は、ジーピーオンラインで働く社員のインタビューや、働く環境、価値観、仕事内容の紹介など、私たちがありがとうをつくり、成長していく姿をお届けする採用オウンドメディアです。"
 >
 
 <Page pageParameter='blog archive'>
-  
+
   <Header />
-  
+
   <Container>
     <div class="l-inner">
       <div class="p-breadcrumb">
@@ -59,8 +60,8 @@ const pageTitle = page.currentPage === 1
           <section class="main-article">
             <div class="archive">
               <h2 class="archive__ttl">
-                <span class="font-en">ALL</span>
-                <span class="font-jp">記事一覧</span>
+                <span class="font-en">COMPANY</span>
+                <span class="font-jp">はたらく環境</span>
               </h2>
               <div class="relation-list">
                 {page.data.map((article) => (
@@ -142,4 +143,3 @@ const pageTitle = page.currentPage === 1
     }
   }
 </style>
-

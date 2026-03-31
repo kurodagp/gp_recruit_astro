@@ -260,7 +260,6 @@
   .sidebar {
     @include mdMax {
       margin-top: sm_vw(140);
-      padding: 0 sm_vw(40);
     }
   }
 
