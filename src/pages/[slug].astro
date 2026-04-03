@@ -1,0 +1,239 @@
+---
+import '../scss/style.scss';
+import '../scss/article.scss';
+import Base from './layouts/base.astro';
+import Container from './layouts/container.astro';
+import Page from './layouts/page.astro';
+import Header from './layouts/header.astro';
+import Footer from './layouts/footer.astro';
+import ArticleHeader from '../components/article/ArticleHeader.astro';
+import ArticleToc from '../components/article/ArticleToc.astro';
+import ArticleProfile from '../components/article/ArticleProfile.astro';
+import ArticleShare from '../components/article/ArticleShare.astro';
+import ArticleRelation from '../components/article/ArticleRelation.astro';
+import Sidebar from '../components/Sidebar.astro';
+import type { Article } from '../types/article';
+import { fetchArticles } from '../lib/nilto';
+import { extractToc } from '../lib/article-helpers';
+
+export async function getStaticPaths() {
+  const articles = await fetchArticles();
+  return articles
+    .filter((article) => article.slug)
+    .map((article) => ({
+      params: { slug: article.slug },
+      props: { article },
+    }));
+}
+
+const { article } = Astro.props as { article: Article };
+
+if (!article) {
+  return Astro.redirect('/blog/');
+}
+
+const siteBase = 'https://recruit.gpol.co.jp/blog';
+const pageUrl = `${siteBase}/${article.slug}.html`;
+const pageTitle = `${article.title} | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア`;
+
+const staff = article.staff_list?.[0]?.staff_ref;
+const { toc: tocItems, body: processedBody } = article.body
+  ? extractToc(article.body)
+  : { toc: [], body: '' };
+const relatedArticles = article.related_articles_list?.map((r) => r.related_article_ref).filter(Boolean) ?? [];
+
+---
+
+<Base
+  pageTitle={pageTitle}
+  pageDescription={article.meta_description ?? ''}
+>
+  <Page pageParameter="blog">
+    <Header />
+
+    <Container>
+      <div class="l-inner">
+        <div class="p-breadcrumb">
+          <ul>
+            <li><a href="/blog/">トップ</a></li>
+            <li>{article.title}</li>
+          </ul>
+        </div>
+
+        <div class="blog-container">
+          <main class="main-content">
+            <article class="main-article">
+              <ArticleHeader article={article} pageUrl={pageUrl} />
+
+              <div class="main-container">
+                {article.lead && (
+                  <div class="main-lead">
+                    <Fragment set:html={article.lead} />
+                  </div>
+                )}
+
+                {tocItems.length > 0 && (
+                  <ArticleToc
+                    items={tocItems}
+                    listStyle="hyphen"
+                  />
+                )}
+
+                {staff && (
+                  <ArticleProfile
+                    staff={staff}
+                    layout="simple"
+                  />
+                )}
+
+                {processedBody && (
+                  <div class="main-contents">
+                    <Fragment set:html={processedBody} />
+                  </div>
+                )}
+              </div>
+
+              <ArticleShare variant="footer" url={pageUrl} title={article.title} />
+
+              <div class="main-recruitment">
+                <div class="main-recruitment__wrapper">
+                  <h4 class="main-recruitment__ttl">
+                    　ジーピーオンラインでは<br>
+                    一緒に働く仲間を募集しています！
+                    <img src="/blog/assets/images/handshake.png" alt="">
+                  </h4>
+                  <div class="main-recruitment__btnList">
+                    <a href="https://www.gpol.co.jp/recruit/" class="main-recruitment__btn" target="_blank">
+                      <span>採用サイトを見る<i class="c-ico-blank-02"><svg><use xlink:href="#ico-blank01"></use></svg></i></span>
+                    </a>
+                    <a href="https://www.gpol.co.jp/recruit/recruitinfo/" class="main-recruitment__btn" target="_blank">
+                      <span>募集職種を見る<i class="c-ico-blank-02"><svg><use xlink:href="#ico-blank01"></use></svg></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="main-sns u-md-max">
+                <div class="main-sns__headline">
+                  <h3 class="main-sns__ttl">
+                    Follow us
+                    <img src="/blog/assets/images/thumbsup.png" alt="" width="39" height="43">
+                  </h3>
+                  <span class="main-sns__info">最新情報をおしらせします</span>
+                </div>
+                <div class="main-sns__content">
+                  <h4 class="main-sns__official">公式SNS</h4>
+                  <ul class="main-sns__list">
+                    <li>
+                      <a href="https://x.com/gpol_tw" class="share-btn" target="_blank">
+                        <img src="/blog/assets/images/x_icon.png" alt="X">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/gpol.fb" class="share-btn" target="_blank">
+                        <img src="/blog/assets/images/fb_icon.png" alt="Facebook">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://note.com/gpol_pr" class="share-btn" target="_blank">
+                        <img src="/blog/assets/images/note_icon.png" alt="note">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </main>
+
+          <aside class="sidebar">
+            <Sidebar />
+          </aside>
+        </div>
+
+        {relatedArticles.length > 0 && (
+          <ArticleRelation articles={relatedArticles as Article[]} />
+        )}
+      </div>
+    </Container>
+
+    <Footer />
+  </Page>
+</Base>
+
+<style lang="scss">
+  @use '../scss/foundation/setting' as *;
+
+  .blog-container {
+    @include mdMin {
+      margin-bottom: 160px;
+    }
+    @include mdMax {
+      margin-bottom: 80px;
+    }
+    @include smMax {
+      margin-bottom: sm_vw(100);
+    }
+  }
+
+  :global(.main-profile) {
+    margin-bottom: 80px;
+  }
+
+  // NILTO bodyの <p><img></p> に figure と同等の余白を設定
+  :global(.main-contents p > img) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    @include smMax {
+      margin-top: sm_vw(60);
+      margin-bottom: sm_vw(80);
+    }
+  }
+
+  :global(.main-recruit-btn) {
+    margin-top: 80px !important;
+  }
+
+  .sidebar {
+    @include mdMin {
+      position: sticky;
+      top: 90px;
+      align-self: flex-start;
+    }
+  }
+
+  .relation {
+    margin-top: 0;
+  }
+
+  // NILTO bodyの .staff-comment を .main-comment no-img と同等の見た目にする
+  :global(.staff-comment) {
+    display: block;
+  }
+  :global(.staff-comment + .staff-comment) {
+    margin-top: 40px;
+    @include smMax {
+      margin-top: sm_vw(80);
+    }
+  }
+  :global(.staff-comment .staff p) {
+    font-size: 1.6rem;
+    line-height: 2;
+    color: #707070;
+    margin-bottom: 0;
+    @include smMax {
+      font-size: sm_vw(30);
+      font-weight: 500;
+      line-height: 1.9;
+    }
+    &::after {
+      content: '：';
+    }
+  }
+  :global(.staff-comment > p) {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+</style>

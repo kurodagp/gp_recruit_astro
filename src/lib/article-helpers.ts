@@ -25,3 +25,19 @@ export function getTags(article: Article): string[] {
   article.theme_list?.forEach((t) => tags.push(t.theme_ref.theme_name));
   return tags;
 }
+
+// h2タグを抽出して目次を生成し、h2タグにidを付与する関数
+export function extractToc(body: string): { toc: { id: string; text: string }[]; body: string } {
+  const toc: { id: string; text: string }[] = [];
+  let index = 0;
+
+  const updatedBody = body.replace(/<h2([^>]*)>(.*?)<\/h2>/gi, (_match, attrs, inner) => {
+    index++;
+    const id = `section${index}`;
+    const text = inner.replace(/<[^>]+>/g, '');
+    toc.push({ id, text });
+    return `<h2${attrs} id="${id}">${inner}</h2>`;
+  });
+
+  return { toc, body: updatedBody };
+}

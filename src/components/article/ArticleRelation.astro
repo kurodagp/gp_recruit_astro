@@ -1,0 +1,53 @@
+---
+import type { Article } from '../../types/article';
+import RelationCard from '../RelationCard.astro';
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props;
+---
+
+<div class="relation">
+  <div class="relation-headline__group">
+    <span class="relation-headline__alphabet">RELATION</span>
+    <h3 class="relation-headline">関連記事</h3>
+  </div>
+  <div class="relation-list">
+    {articles.map((article) => (
+      <RelationCard article={article} />
+    ))}
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../../scss/foundation/setting' as *;
+
+  .relation-list {
+    column-gap: calc((100% - 30.3% * 3) / 2);
+    @include mdMax {
+      column-gap: calc((100% - 48% * 2));
+    }
+
+    :global(.relation-card) {
+      @include mdMin {
+        width: 30.3%;
+      }
+      @include mdMax {
+        width: 48%;
+      }
+      @include smMax {
+        width: 100%;
+      }
+    }
+  }
+
+  // NILTOリファレンスのネスト制限？により関連記事では空になるため非表示
+  .relation :global(.relation-link__caption__group) {
+    display: none;
+  }
+  .relation :global(.relation-tagList) {
+    display: none;
+  }
+</style>

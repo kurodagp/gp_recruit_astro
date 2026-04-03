@@ -1,0 +1,55 @@
+---
+import type { Article } from '../../types/article';
+import { formatDate, formatDateTime, getTags } from '../../lib/article-helpers';
+import ArticleShare from './ArticleShare.astro';
+
+const CATEGORY_LABEL_MAP: Record<string, string> = {
+  PEOPLE: 'ひと',
+  COMPANY: 'はたらく環境',
+  VALUES: '価値観',
+  WORK: '仕事',
+};
+
+interface Props {
+  article: Article;
+  pageUrl: string;
+}
+
+const { article, pageUrl } = Astro.props;
+
+const categoryName = article.category?.category_name ?? '';
+const categoryLabel = CATEGORY_LABEL_MAP[categoryName] ?? categoryName;
+const date = formatDate(article.published_at);
+const dateTime = formatDateTime(article.published_at);
+const tags = getTags(article);
+---
+
+<header class="main-header">
+  <div class="main-header__category">
+    <span class="main-header__category-alphabet">{categoryName}</span>
+    <span class="main-header__category-txt">{categoryLabel}</span>
+  </div>
+
+  <h1>{article.title}</h1>
+
+  <div class="main-header__data">
+    <time class="main-header__time" datetime={dateTime}>{date}</time>
+    <div class="main-header__contents">
+      <ul class="main-header__tag">
+        {tags.map((tag) => (
+          <li><span class="main-header__tag__btn">{tag}</span></li>
+        ))}
+      </ul>
+      <ArticleShare url={pageUrl} title={article.title} variant="header" />
+    </div>
+  </div>
+
+  <div class="main-header__thumbnail">
+    <img
+      src={article.main_visual?.url}
+      alt={article.main_visual?.alt ?? ''}
+      width="960"
+      height="504"
+    />
+  </div>
+</header>

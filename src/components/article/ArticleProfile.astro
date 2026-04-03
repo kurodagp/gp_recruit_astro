@@ -1,0 +1,47 @@
+---
+import type { Staff } from '../../types/article';
+
+interface Props {
+  staff: Staff;
+  layout?: 'container' | 'simple';
+}
+
+const { staff, layout = 'container' } = Astro.props;
+const isJaName = /[\u3000-\u9FFF]/.test(staff.staff_name);
+---
+
+{layout === 'container' ? (
+  <div class="main-profile__container">
+    <div class="main-profile">
+      <span class="main-profile__tag">STAFF</span>
+      <div class="main-profile__wrapper">
+        <div class="main-profile__content">
+          <div class="main-profile__img">
+            <img src={staff.staff_image?.url} alt={staff.staff_image?.alt ?? ''} width="100" height="100">
+          </div>
+          <div class="main-profile__data">
+            <span class="main-profile__category">{staff.staff_title}</span>
+            <h4 class={`main-profile__name${isJaName ? ' ja' : ''}`}>{staff.staff_name}</h4>
+          </div>
+        </div>
+        <p>{staff.staff_profile}</p>
+      </div>
+    </div>
+  </div>
+) : (
+  <div class="main-profile">
+    <span class="main-profile__tag">STAFF</span>
+    <div class="main-profile__wrapper">
+      <div class="main-profile__content">
+        <div class="main-profile__img">
+          <img src={staff.staff_image?.url} alt={staff.staff_image?.alt ?? ''} width="100" height="100">
+        </div>
+        <div class="main-profile__data">
+          <span class="main-profile__category">{staff.staff_title}</span>
+          <h4 class={`main-profile__name${isJaName ? ' ja' : ''}`}>{staff.staff_name}</h4>
+        </div>
+      </div>
+      <p>{staff.staff_profile}</p>
+    </div>
+  </div>
+)}

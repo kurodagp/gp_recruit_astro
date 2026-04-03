@@ -1,0 +1,27 @@
+---
+interface TocItem {
+  id: string;
+  text: string;
+}
+
+interface Props {
+  items: TocItem[];
+  listStyle?: 'standard' | 'hyphen';
+}
+
+const { items, listStyle = 'standard' } = Astro.props;
+---
+
+<div class="main-index">
+  <div class="main-index-headline__group">
+    <h3 class="main-index-headline__alphabet">INDEX</h3>
+    <span class="main-index-headline">目次</span>
+  </div>
+  <nav>
+    <ul class={listStyle === 'hyphen' ? 'hyphen' : undefined}>
+      {items.map((item) => (
+        <li><a href={`#${item.id}`} class="js-anker">{item.text}</a></li>
+      ))}
+    </ul>
+  </nav>
+</div>

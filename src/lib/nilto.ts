@@ -16,5 +16,5 @@ export async function fetchArticles(): Promise<Article[]> {
   }
 
   const json: ArticlesResponse = await res.json();
-  return json.data;
+  return json.data.filter((a) => a._status === 'published' && a.slug); // 公開状態かつslugがある記事のみ返す
 }

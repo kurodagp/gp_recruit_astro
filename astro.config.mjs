@@ -5,6 +5,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://kurodagp.github.io',
   base: '/blog',
+  build: {
+    format: 'file', // *.html形式で出力
+  },
   vite: {
     css: {
       preprocessorOptions: {

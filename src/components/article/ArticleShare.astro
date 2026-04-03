@@ -1,0 +1,50 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  variant: 'header' | 'footer';
+}
+
+const { url, title, variant } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const shareTitle = `${title} | GROW-PLATHX [グロウプレイス] | ジーピーオンラインの採用オウンドメディア`;
+const encodedTitle = encodeURIComponent(shareTitle);
+const xUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+---
+
+{variant === 'header' ? (
+  <div class="main-header__share">
+    <span class="main-header__share__txt">SHARE</span>
+    <ul>
+      <li>
+        <a href={xUrl} target="_blank" class="main-header__share__btn share-btn -x">
+          <img src="/blog/assets/images/x_icon.png" alt="X">
+        </a>
+      </li>
+      <li>
+        <a href={fbUrl} target="_blank" class="main-header__share__btn share-btn -facebook">
+          <img src="/blog/assets/images/fb_icon.png" alt="Facebook">
+        </a>
+      </li>
+    </ul>
+  </div>
+) : (
+  <div class="main-share">
+    <div class="main-share__wrapper">
+      <p class="main-share__txt">この記事をSNSでシェアする</p>
+      <ul class="main-share__btnList">
+        <li>
+          <a href={xUrl} target="_blank" class="main-share__btn share-btn -x">
+            <img src="/blog/assets/images/x_icon.png" alt="X">
+          </a>
+        </li>
+        <li>
+          <a href={fbUrl} target="_blank" class="main-share__btn share-btn -facebook">
+            <img src="/blog/assets/images/fb_icon.png" alt="Facebook">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+)}
